@@ -1,0 +1,220 @@
+Page 1
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Our story begins [background].
+
+Page 2
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: I want to plan the best [event] ever.
+
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Where do I start? Oh! First I will need [meal].
+
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: I can help you make [meal]. But I will need [food] to make them.
+
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: I am great at finding things. I can find [food] at the store, but I will need a way to get there.
+
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: I can take you to the store in my [vehicle].
+
+Page 7
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: While you are there, can you pick up some [decoration] and [entertainment]? We will get started on setting things up.
+
+Page 8
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_smile]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Sounds good! We will bring everything back in no time.
+
+Page 9
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehicle]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 3] went with [Character 4] in the [vehicle] to pick up everything the group needed.
+
+Page 10
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 1]
+CENTER-RIGHT: [Character 2, meal-held]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 2] helped [Character 1] make [meal] and set everything up.
+
+Page 11
+INT
+LEFT-TOP-LEFT: [decoration]
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: [decoration]
+LEFT-CENTER-LEFT: [Character 1_smile, entertainment-held]
+CENTER-LEFT: [Character 2_smile]
+CENTER-RIGHT: [Character 3_smile, meal-held]
+RIGHT-CENTER-RIGHT: [Character 4_smile]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: The friends spent the rest of the day [activity]. It really was the best [event] ever.
+
+Page 12
+role: Dreamer
+
+Page 13
+role: Chef
+
+Page 14
+role: Finder
+
+Page 15
+role: Driver

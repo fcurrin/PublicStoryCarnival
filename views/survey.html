@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Story Carnival</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/SC_logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/theme/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="text-white js-scroll-trigger" href="#page-top"><%= __("Story Carnival") %></a>
+            <a class="btn btn-outline-light" href="/">
+                <%= __("Home") %>
+            </a>
+        </div>
+    </nav>
+    
+    <header class="masthead bg-primary text-secondary text-center">
+        <input id="hiddenUser" type="hidden" value="<%= user %>"/>
+		<input id="hiddenRole" type="hidden" value="<%= role %>"/>
+        <input id="hiddenSurvey" type="hidden" value="<%= surveysToTake %>"/>
+        <input id="hiddenSurveyIDs" type="hidden" value="<%= surveys %>"/>
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h2 class="masthead-heading text-uppercase mb-3"><%= __("Incomplete Surveys") %></h2>
+            <h1 class="lead text-secondary" style="text-align: left; padding: 10px">
+                                
+                <span style="font-style: italic;"><%= __("Disclaimer: Surveys taken within the last 1 hour may still appear as incomplete.") %></span> 
+           </h1>
+
+           <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Icon Divider-->
+
+            <section class="page-section mb-0" id="survey">
+                <div class="container">
+
+                    <div class="text-center mt-4">
+                        
+                        <% if(surveysToTake.length<1) { %>
+                            <h1 class="lead text-secondary" style="text-align: left; padding: 10px">
+                                
+                                 <span style="font-weight:bold;"><%= __("No incomplete surveys.") %></span> 
+                            </h1>
+                        <% } else {%>
+                        <% for(var i=0; i<surveysToTake.length; i++) { %>
+                            <input id="<%=surveysToTake[i]%>" style="width:250px;" type="button" class="btn btn-xl btn-primary" value="<%=__(surveysToTake[i])%>" onclick="getSurvey(this.id)"/>
+                        <% } %>
+                        <% } %>
+                           
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+    </body>
+</html>
+
+<body id="page-top">
+
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+
+<!-- Footer-->
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="/theme/js/scripts.js"></script>
+<!---->
+
+<script>
+    function getSurvey(id){
+        var uid = document.getElementById("hiddenUser").value;
+		var role = document.getElementById("hiddenRole").value;
+        var surveyIDs = JSON.parse(document.getElementById("hiddenSurveyIDs").value);
+        var surveyID =surveyIDs[role][id];
+
+        window.open(
+            'https://uiowa.qualtrics.com/jfe/form/'+surveyID+'?UID='+uid,
+            '_blank' // <- This is what makes it open in a new window.
+        )
+    }
+</script>
+
+</body>
+</html>

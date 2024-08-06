@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= translatedTitle %></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <script src="https://zimjs.org/cdn/1.2.3/createjs_min.js"></script>
+    <script src="https://zimjs.org/cdn/10.7.1/zim.js"></script>
+    <!-- use zimjs.com/distill for minified individual functions! -->
+    <!-- 0. import the pizzazz_02.js file of icons -->
+    <script src="https://d309knd7es5f10.cloudfront.net/pizzazz_02.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--TEST: importing i18n-->
+    <script src="/scripts/bundle.js"></script>
+
+    <div id="playlist">
+    <audio autoplay></audio>
+    </div>
+
+    <!--TEST: for musicPath in planner.js-->
+    <script>
+    const locale = '<%= __("locale") %>';
+    </script>    
+    
+    <!--TEST: characters-->
+    <script>
+    const catObj = '<%= __("Cat") %>';
+    const catObjVoice = '<%= __("catVoice") %>';
+    const monkeyObj = '<%= __("Monkey") %>';
+    const monkeyObjVoice = '<%= __("monkeyVoice") %>';
+    const bearObj = '<%= __("Bear") %>';
+    const bearObjVoice = '<%= __("bearVoice") %>';
+    const horseObj = '<%= __("Horse") %>';
+    const horseObjVoice = '<%= __("horseVoice") %>';
+    const dogObj = '<%= __("Dog") %>';
+    const dogObjVoice = '<%= __("dogVoice") %>';
+    </script>
+
+    <!--TEST-->
+    <script>
+    const howManyTitleStr = '<%= __("How many players are there?") %>';
+    const whoDoesPlayer = '<%= __("Who does Player ") %>';
+    const wantToBe = '<%= __(" want to be?") %>';
+    const change = '<%= __("Change") %>';
+    const pick = '<%= __("Pick") %>';
+    const done = '<%= __("Done") %>';
+    const home = '<%= __("HOME") %>';
+    </script>
+
+   <!-- Introduction Voice Agent Prompts -->
+    <script>
+      var expandOptionsIntro = ['<%= __("Hey, friends! I feel better already. Let’s go explore the woods.") %>', '<%= __("Is it ok if I stay with you from now on?") %>', '<%= __("Are there other birds who live in the woods?") %>', '<%= __("Can you show me how to do some of your favorite camping things?") %>'];
+      var expandRole1OptionsIntro = ['<%= __("Cat, can you help me find other birds like me?") %>', '<%= __("Cat, can you show me around the campsite?") %>', '<%= __("Cat, can you find toys that I could play with?") %>', '<%= __("Cat, can you search for a tree where I could perch?") %>'];
+      var expandRole2OptionsIntro = ['<%= __("Monkey, what do you like to make for breakfast?") %>', '<%= __("Monkey, do you make any recipes using birdseed?") %>', '<%= __("Monkey, do you need any ingredients from the store?") %>', '<%= __("Monkey, is there any more sushi left over?") %>'];
+      var expandRole3OptionsIntro = ['<%= __("Bear, could you build a bedroom for me?") %>', '<%= __("Bear, could you help me build a nest?") %>', '<%= __("Bear, could you build toys for me to play with?") %>', '<%= __("Bear, can you build a car that I could use to get around the woods?") %>'];
+      var expandRole4OptionsIntro = ['<%= __("Horse, can you check on my wing and see how it’s doing?") %>','<%= __("Horse, can you show me some stretches I could do to keep my wing strong?") %>', '<%= __("Horse, can you unbandage my wing yet?") %>',  '<%= __("Horse, how long will it take until my wing is all better?") %>'];
+      var replayOptionsIntroNext = ['<%= __("*bird sound*") %>', '<%= __("Cat, you found me!") %>', '<%= __("Cat, can you find the way back to your campsite?") %>', '<%= __("Hello friends. My name is MiniBird. I have traveled a long way and I am very tired and hungry.") %>', '<%= __("Monkey, I am very hungry. Can you make me something to eat?") %>', '<%= __("Monkey, can you make some sushi for me?") %>', '<%= __("Cat, can you find ingredients for Monkey?") %>', '<%= __("Monkey, the sushi smell delicious!") %>', '<%= __("Monkey, I have never eaten such yummy sushi before!") %>', '<%= __("Monkey, what do you use to make the sushi?") %>', '<%= __("Monkey, thank you! I am so full.") %>', '<%= __("Bear, can you build me a table?") %>', '<%= __("Cat, can you find materials for Bear?") %>', '<%= __("Bear, what is the table made out of?") %>', '<%= __("Bear, can you put me on the table?") %>', '<%= __("Bear, thank you for building me this table!") %>', '<%= __("I have been flying for so long that my wings feel sore.") %>', '<%= __("Horse, can you take a look at my wing?") %>', '<%= __("Horse, does my wing need a bandage?") %>', '<%= __("Cat, can you find medical supplies for Horse?") %>', '<%= __("Horse, can you clean my wing before you put the bandage on?") %>', '<%= __("Horse, can you bandage up my wing?") %>', '<%= __("Horse, thank you! My wing feels better already.") %>', '<%= __("Bear, could we turn this table into a bed?") %>',  '<%= __("Horse, do I need some medicine before bedtime?") %>', '<%= __("Thank you for taking me in and taking care of me!") %>', '<%= __("I am going to rest now. I am very sleepy.") %>'];
+      var replayOptionsIntroPrev = [];
+    </script>
+
+    <!-- Birthday Party Voice Agent Prompts -->
+    <script>
+        var expandOptionsBirthday = ['<%= __("Let’s turn on some music and dance!") %>', '<%= __("Let’s play some party games!") %>', '<%= __("Let’s eat some birthday cake!") %>', '<%= __("Is it time for Cat to open presents?") %>'];
+        var expandRole1OptionsBirthday = ['<%= __("Cat, what music should we play at the party?") %>', '<%= __("Cat, what games should we play at the party?") %>', '<%= __("Cat, is there any other food you want at the party?") %>', '<%= __("Cat, what presents do you hope you get for your birthday?") %>'];
+        var expandRole2OptionsBirthday = ['<%= __("Monkey, can you make some snacks for the party?") %>', '<%= __("Monkey, can you make a gift for Cat?") %>', '<%= __("Monkey, let’s make a birthday card for Cat.") %>', '<%= __("Monkey, can you make some more decorations for the party?") %>'];
+        var expandRole3OptionsBirthday = ['<%= __("Bear, can you find Cat’s birthday gifts?") %>', '<%= __("Bear, let’s play hide and seek.") %>', '<%= __("Bear, where is the cake?") %>', '<%= __("Bear, can you help me find a good present to give Cat?") %>'];
+        var expandRole4OptionsBirthday = ['<%= __("Horse, let’s surprise the others with a limo ride!") %>', '<%= __( "Horse, can you drive me to the store to get a gift for Cat?") %>', '<%= __("Horse, can we race toy cars at the party?") %>', '<%= __("Horse, can you take us to get ice cream to go with the cake?") %>'];
+        var replayOptionsBirthdayNext = ['<%= __("Cat, what do you want to do to celebrate your birthday?") %>', '<%= __("Let’s plan a party for Cat’s birthday!") %>', '<%= __("Cat, what do you need for the party?") %>', '<%= __("Monkey, what do you need to make a cake for Cat’s birthday?") %>', '<%= __("What do we need to make a cake for the party?") %>', '<%= __("Cat, is there anything else you need Bear and Horse to get at the store?") %>', '<%= __("We need eggs, bananas, balloons, and party hats from the store.") %>', '<%= __("Bear, let’s ask Horse to give us a ride to the store.") %>', '<%= __("Horse, can you drive Bear to the store?") %>', '<%= __("Monkey and Cat, let’s organize the room for the party.") %>', '<%= __("Horse, start the car.") %>', '<%= __("Horse, careful! You’re driving so fast!") %>', '<%= __("Horse, let’s park at the store.") %>', '<%= __("Bear, where are the eggs?") %>', '<%= __("Bear, where are the bananas?") %>', '<%= __("Bear, where are the balloons and party hats?") %>', '<%= __("Bear, let’s check out and go back to the house.") %>', '<%= __("Horse, let’s drive Bear back to the house.") %>', '<%= __("Horse, let’s park and wish Cat a happy birthday.") %>', '<%= __("Bear, let’s give Monkey the eggs and bananas and give Cat the balloons and party hats.") %>', '<%= __("Monkey, can you start making the cake?") %>', '<%= __("Monkey, is the cake ready?") %>', '<%= __("Monkey, how does the cake taste?") %>', '<%= __("Cat, do we have everything we need for the birthday party?") %>', '<%= __("Now we have everything we need for the party!") %>', '<%= __("Let’s put on our party hats!") %>', '<%= __("Happy birthday, Cat!") %>'];
+        var replayOptionsBirthdayPrev = [];
+    </script>
+
+    <!-- Castaways Voice Agent Prompts -->
+    <script>
+      var expandOptionsCastaways = ['<%= __("Should we start rebuilding the ship so we can go back home?") %>', '<%= __("Is there fruit we could eat on the island?") %>', '<%= __("What furniture do we need for the shelter?") %>', '<%= __("How should we signal for help?") %>'];
+      var expandRole1OptionsCastaways = ['<%= __("Cat, what materials are there on the island? What can we make out of them?") %>', '<%= __("Cat, how can we try to get back home?") %>', '<%= __("Cat, what do we need to do to make sure we have clean water to drink?") %>', '<%= __("Cat, are there other food sources on the island?") %>'];
+      var expandRole2OptionsCastaways = ['<%= __("Horse, can you make some furniture for the shelter?") %>', '<%= __("Horse, can you start making a new boat to help us get back home?") %>', '<%= __("Horse, can you make a kitchen for the shelter so we can make food more easily?") %>', '<%= __("Horse, can you make some storage space for our building materials and food?") %>'];
+      var expandRole3OptionsCastaways = ['<%= __("Bear, can you move rocks to spell out SOS?") %>', '<%= __("Bear, can you gather the pieces of the ship that have washed ashore?") %>', '<%= __("Bear, can you chop down some trees for firewood?") %>', '<%= __("Bear, can you help gather more building materials?") %>'];
+      var expandRole4OptionsCastaways = ['<%= __("Monkey, can you swim out and see what kinds of fish are in the ocean?") %>', '<%= __("Monkey, is there anything dangerous in the ocean around here?") %>', '<%= __("Monkey, can you see any other ships in the ocean?") %>', '<%= __("Monkey, what would we need to build a boat that could take us home?") %>'];
+      var replayOptionsCastawaysNext = ['<%= __("Let’s go sailing!") %>', '<%= __("Cat, where should we sail to?") %>', '<%= __("Uh oh! There’s a big storm!") %>', '<%= __("Oh no! The boat is sinking! We need to build a raft and get to shore.") %>', '<%= __("Horse, can you build a raft to get us to safety?") %>', '<%= __("Monkey, can you steer the raft to safety?") %>', '<%= __("Cat, what do we need to do now that we’re stuck on an island?") %>', '<%= __("We need to build a shelter and catch some fish for dinner.") %>', '<%= __("Cat, can you tell Bear to get supplies and tell Horse to start building the shelter?") %>', '<%= __("Horse, what do you need to build the shelter?") %>', '<%= __("Bear, let’s find trees and leaves for the shelter.") %>', '<%= __("Bear, can you chop down those trees?") %>', '<%= __("Bear, how many leaves can you find?") %>', '<%= __("Bear, let’s give these materials to Horse for the shelter.") %>', '<%= __("Bear, can you carry everything yourself?") %>', '<%= __("Wow, Bear! You’re so strong!") %>', '<%= __("Horse, can you start working on the shelter?") %>', '<%= __("Horse, is the shelter big enough to fit everyone?") %>', '<%= __("Horse, let’s ask Bear for more leaves to finish the shelter.") %>', '<%= __("Horse, let’s show everyone the shelter when you’re done.") %>', '<%= __("Monkey, let’s catch some fish for dinner.") %>', '<%= __("Monkey, do you catch fish with your hands, a spear, or a fishing pole?") %>', '<%= __("Monkey, how many fish have you caught?") %>', '<%= __("Cat, can you build a fire so that Monkey can cook the fish?") %>', '<%= __("Monkey, let’s cook the fish for dinner.") %>', '<%= __("Monkey, let’s call the others over to eat.") %>', '<%= __("Let’s eat this yummy fish!") %>', '<%= __("Let’s sleep in the warm shelter. Hopefully we will get rescued tomorrow.") %>'];
+      var replayOptionsCastawaysPrev = [];
+    </script>
+
+    <!-- Castaways Day 2 Voice Agent Prompts -->
+    <script>
+      var castawaysDay2ExpandOptions = ['<%= __("Is that a bird in that tree over there?") %>', '<%= __("Do you see anything in that bush?") %>', '<%= __("Did you hear that noise again?") %>', '<%= __("Let’s get this creature back to safety.") %>'];
+      var castawaysDay2ExpRole1Options = ['<%= __("Cat, lead us to the noise.") %>', '<%= __("Cat, does the animal sound friendly to you?") %>', '<%= __("Cat, how should we rescue this animal?") %>', '<%= __("Cat, what supplies do we need?") %>'];
+      var castawaysDay2ExpRole2Options = ['<%= __("Horse, can you make a trap?") %>', '<%= __("Horse, can you make some binoculars so we can see better?") %>', '<%= __("Horse, can you make some bandages in case the animal is hurt?") %>', '<%= __("Horse, can we make room for the new animal at the shelter?") %>'];
+      var castawaysDay2ExpRole3Options = ['<%= __("Bear, can you move that rock out of the way?") %>', '<%= __("Bear, can you help carry the animal back to safety?") %>', '<%= __("Bear, can you get it out of that tree?") %>', '<%= __("Bear, can you hold back those branches?") %>'];
+      var castawaysDay2ExpRole4Options = ['<%= __("Monkey, can we use some of your fish as bait?") %>', '<%= __("Monkey, does this animal know how to swim?") %>', '<%= __("Monkey, can you find anything in the ocean that could help heal our new friend?") %>', '<%= __("Monkey, how should we try to keep this animal dry and safe?") %>'];
+      var replayOptionsCD2Next = ['<%= __("Did anyone else hear that strange noise?") %>', '<%= __("Cat, what do you think is making that noise?") %>', '<%= __("It sounds like an animal! It might be hurt.") %>', '<%= __("Monkey, does it sound like the animal lives on land or in the water?") %>', '<%= __("Cat, what should we do if the animal is hurt? What if it’s dangerous?") %>', '<%= __("Horse, will we need to make a trap for the animal? Or maybe some bandages?") %>', '<%= __("Bear, can you rescue the animal if it’s hurt?") %>', '<%= __("Bear, can you protect us if the animal is dangerous?") %>', '<%= __("Cat, where should we go to look for the animal?") %>', '<%= __("Let’s go into the jungle to see if we can find what’s making that noise.") %>', '<%= __("Bear, can you clear a path through the jungle?") %>', '<%= __("Horse, do we need to make anything before we go into the jungle?") %>', '<%= __("Horse, can you bring some crafting materials with you?") %>', '<%= __("Monkey, do you think the animal might want some fish?") %>', '<%= __("Monkey, can we swim to safety if the animal is dangerous?") %>'];
+      var replayOptionsCD2Prev = [];
+  </script>
+
+  <!-- Space Voice Agent Prompts -->
+  <script>
+    var expandOptionsSpace = ['<%= __("Can we repair the spaceship and go back home?") %>', '<%= __("Has anyone seen any aliens on the moon?") %>', '<%= __("The rescue team said they will be a while. We could explore the moon while we wait.") %>', '<%= __("We should make sure the rescue team can see our camp when they get here.") %>'];
+    var expandRole1OptionsSpace = ['<%= __("Cat, can you make a flag to signal for help?") %>', '<%= __("Cat, let’s make more furniture for the shelter.") %>', '<%= __("Cat, can we make a communication device in case we come across any aliens?") %>', '<%= __("Cat, let’s make some gear to keep everyone safe.") %>'];
+    var expandRole2OptionsSpace = ['<%= __("Horse, are there other plants already on the moon?") %>', '<%= __("Horse, can we plant flowers on the moon?") %>', '<%= __("Horse, do we have enough of a food supply to last a while?") %>', '<%= __("Horse, can we grow trees and use the wood to build things?") %>'];
+    var expandRole3OptionsSpace = ['<%= __("Monkey, can we start fixing the spaceship?") %>', '<%= __("Monkey, what do we need to fix the spaceship?") %>', '<%= __("Monkey, is any of our gear broken? Do we need to fix it?") %>', '<%= __("Monkey, can we fix anything in the shelter that’s broken?") %>'];
+    var expandRole4OptionsSpace = ['<%= __("Bear, can we go exploring in the moon rover?") %>', '<%= __("Bear, let’s go see if we can find any aliens.") %>', '<%= __("Bear, let’s check out that crater.") %>', '<%= __("Bear, let’s see if we can find any more parts for the spaceship or shelter.") %>'];
+    var replayOptionsSpaceNext = ['<%= __("Let’s fly to the moon!") %>', '<%= __("Oh no! The spaceship is crashing!") %>', '<%= __("While we are stuck on the moon, we need to make a shelter and grow food.") %>', '<%= __("Cat, can you make a shelter for us?") %>', '<%= __("Horse, can you grow some food for us?") %>', '<%= __("Cat, what materials do you need for the shelter?") %>', '<%= __("Horse, what seeds do you need to plant?") %>', '<%= __("We need to fix the moon rover and find the parts to fix the radio and call home.") %>', '<%= __("Monkey, can you fix the moon rover?") %>', '<%= __("Bear, can you find the parts of the radio?") %>', '<%= __("Horse, let’s water the seedlings.") %>', '<%= __("Horse, let’s use fertilizer to make the plants grow faster.") %>', '<%= __("Cat, is there enough space for everyone in the shelter?") %>', '<%= __("Cat, can you make a refrigerator for the shelter so Horse can store food?") %>', '<%= __("Bear, can you test drive the moon rover to make sure it works?") %>', '<%= __("Monkey, what parts do you need to fix the radio?") %>', '<%= __("We need to find the antenna to fix the radio.") %>', '<%= __("Monkey, let’s ask Bear to take us to find the antenna.") %>', '<%= __("Bear, can you take Monkey to find the radio antenna?") %>', '<%= __("Horse, let’s harvest the food you grew.") %>', '<%= __("Monkey, can you fix the radio now?") %>', '<%= __("Bear, let’s drive Monkey back to Cat and Horse.") %>', '<%= __("Now that we have a shelter, food, and radio, we can signal for help and rest for the night.") %>', '<%= __("Cat, let’s show everyone the shelter you made.") %>', '<%= __("Horse, let’s make dinner for everyone.") %>', '<%= __("Monkey, can we call home with the radio?") %>'];
+    var replayOptionsSpacePrev = [];
+  </script>
+
+    <!-- Space Day 2 Voice Agent Prompts -->
+    <script>
+      var expandOptionsSpaceD2 = ['<%= __("Look! There’s the house! Let’s go inside.") %>', '<%= __("Eek! Is that a ghost?") %>', '<%= __("Look at all the furniture they have in here. It doesn’t look like anything I’ve ever seen before.") %>', '<%= __("Do you think someone used to live here?") %>'];
+      var expandRole1OptionsSpaceD2 = ['<%= __("Cat, can you make anything out of this furniture?") %>', '<%= __("Cat, can we use any of this furniture in the shelter?") %>', '<%= __("Cat, look at this artwork. What does it look like to you?") %>', '<%= __("Cat, what kind of creature do you think built this house?") %>'];
+      var expandRole2OptionsSpaceD2 = ['<%= __("Horse, look at the flowers that are growing in these planters. They look different from any flowers we have back home.") %>', '<%= __("Horse, look at all the food in the fridge! Do you think it’s still any good to eat?") %>', '<%= __("Horse, what do these fruits and vegetables taste like?") %>', '<%= __("Horse, should we gather seeds from the plants in the house?") %>'];
+      var expandRole3OptionsSpaceD2 = ['<%= __("Monkey, look at all the tools in this closet!") %>', '<%= __("Uh oh! The lights went out. Monkey, can you fix the lights?") %>', '<%= __("Monkey, there are lots of gadgets in this room over here. Do you think they have any parts that could help us?") %>', '<%= __("Monkey, could this satellite give the radio better reception?") %>'];
+      var expandRole4OptionsSpaceD2 = ['<%= __("Bear, park the moon buggy over here.") %>', '<%= __("Bear, look at this truck that’s parked outside the house! Can we find the keys for it?") %>', '<%= __("Bear, it looks like someone was trying to build a spaceship over here. Do you think this could fly?") %>', '<%= __("Bear, let’s make sure the moon buggy is ready in case we need to make a quick getaway.") %>'];
+      var replayOptionsSpaceD2Next = ['<%= __("Cat, can you bring any materials we might need while we’re exploring?") %>', '<%= __("Horse, can you pack enough food for the trip?") %>', '<%= __("Monkey, can you check the sensors and make sure they’re working correctly?") %>', '<%= __("Bear, let’s go exploring in the moon rover.") %>', '<%= __("I’m picking up a strange reading. There is a house on the moon, but there are no signs of life in it.") %>', '<%= __("Bear, can you drive us to the house?") %>', '<%= __("Cat, do you think another maker built the house we’re going to explore?") %>', '<%= __("Horse, do you think there will be a garden at the house?") %>', '<%= __("Monkey, do you have your tools? There might be things to repair at the house.") %>', '<%= __("Bear, let’s hurry to the house!") %>', '<%= __("Cat, can you make us some flashlights that we can use while we explore the house?") %>', '<%= __("Horse, what do you think is in the house?") %>', '<%= __("Monkey, do you think the house will have any parts we could use to fix the spaceship?") %>', '<%= __("Let’s go explore the house.") %>'];
+      var replayOptionsSpaceD2Prev = []; 
+    </script>
+
+    <!-- Snow Day Voice Agent Prompts -->
+    <script>
+      var expandOptionsSnow = ['<%= __("What should we do outside first?") %>', '<%= __("We should play hockey on the ice! What gear will we need to get?") %>', '<%= __("We should go exploring! Where do we want to go first?") %>', '<%= __("What should we do inside first?") %>', '<%= __("We should draw how the snow day makes us feel! We can draw ourselves playing in the snow, or we can draw ourselves warm in a blanket fort, or we can draw anything we’d like!") %>', '<%= __("We should look at the plants! Do they look like they’re wintertime plants or summertime plants?") %>'];
+      var expandRole1OptionsSnow = ['<%= __("Bear, have you shown the others the view?") %>', '<%= __("Bear, we should keep exploring! Where should we go next?") %>', '<%= __("Bear, let’s go explore the forest! What do you think we’ll find?") %>', '<%= __("Bear, let’s go explore the mountain! What would we need to climb to the top?") %>'];
+      var expandRole2OptionsSnow = ['<%= __("Monkey, have you shown the others the frozen pond?") %>', '<%= __("Monkey, let’s play hockey! What do we need to play that game?") %>', '<%= __("Monkey, do the others know how to skate? We should teach them, and all of us can skate together!") %>', '<%= __("Monkey, what other outdoor games should we play? Should we make snowmen and snow angels together?") %>'];
+      var expandRole3OptionsSnow = ['<%= __("Cat, have you shown the others your paintings?") %>', '<%= __("Cat, let’s draw the others! How should they pose?") %>', '<%= __("Cat, let’s share our paints! Could we draw something together? What would it look like?") %>', '<%= __("Cat, what else could we make? Could we make sculptures out of snow?") %>'];
+      var expandRole4OptionsSnow = ['<%= __("Dog, have you shown the others your greenhouse?") %>', '<%= __("Dog, we should make sure everyone has a snack! What vegetables have you grown in the greenhouse?") %>', '<%= __("Dog, have you taken care of your plants? Do they need more sunlight? Fertilizer? Water?") %>', '<%= __("Dog, what could grow outside in this weather? Should we try planting it in the snow?") %>'];
+      var replayOptionsSnowNext = ['<%= __("It’s a snow day! We need to figure out how to enjoy our day off!") %>', '<%= __("We need to decide if we want to play inside or outside! If we play outside, we can go ice-skating or exploring; if we play inside, we can paint or garden!") %>', '<%= __("Bear, what do we want to do outside?") %>', '<%= __("Monkey, what do we want to do outside?") %>', '<%= __("Cat, what do we want to do inside?") %>', '<%= __("Dog, what do we want to do inside?") %>', '<%= __("Monkey, since we’re ice-skating, what should we do on the ice? Tricks? Hockey?") %>', '<%= __("Bear, where should we explore next? The forest?") %>', '<%= __("Cat, since we’re painting, what should we paint? One of our friends? A piece of fruit?") %>', '<%= __("Dog, since we’re gardening, how should we take care of our plants? Do they need fertilizer? Water?") %>', '<%= __("How did we feel playing alone? How would we feel if we played together?") %>', '<%= __("It was lonely doing our own thing! We should get back together and figure out what to do!") %>', '<%= __("We should play together! That way, we can have fun, and we won’t be lonely!") %>'];
+      var replayOptionsSnowPrev = [];
+  </script>
+
+  <!-- Snow Day Part 1 Voice Agent Prompts -->
+  <script>
+    var expandOptionsSnow1 = ['<%= __("We should tell each other what we did on our snow day!") %>', '<%= __("What are our favorite things? Is there something else we can do?") %>', '<%= __("What should we do outside first?") %>', '<%= __("What should we do inside first?") %>' ];
+    var expandRole1OptionsSnow1 = ['<%= __("Bear, have you shown the others the view?") %>', '<%= __("Bear, we should keep exploring! Where should we go next?") %>', '<%= __("Bear, let’s go explore the forest! What do you think we’ll find?") %>', '<%= __("Bear, let’s go explore the mountain! What would we need to climb to the top?") %>'];
+    var expandRole2OptionsSnow1 = ['<%= __("Monkey, have you shown the others the frozen pond?") %>', '<%= __("Monkey, let’s play hockey! What do we need to play that game?") %>', '<%= __("Monkey, do the others know how to skate? We should teach them, and all of us can skate together!") %>', '<%= __("Monkey, what other outdoor games should we play? Should we make snowmen and snow angels together?") %>' ];
+    var expandRole3OptionsSnow1 = ['<%= __("Cat, have you shown the others your paintings?") %>', '<%= __("Cat, let’s draw the others! How should they pose?") %>', '<%= __("Cat, let’s share our paints! Could we draw something together? What would it look like?") %>', '<%= __("Cat, what else could we make? Could we make sculptures out of snow?") %>' ];
+    var expandRole4OptionsSnow1 = ['<%= __("Dog, have you shown the others your greenhouse?") %>', '<%= __("Dog, we should make sure everyone has a snack! What vegetables have you grown in the greenhouse?") %>', '<%= __("Dog, have you taken care of your plants? Do they need more sunlight? Fertilizer? Water?") %>', '<%= __("Dog, what could grow outside in this weather? Should we try planting it in the snow?") %>' ];
+    var replayOptionsSnow1Next = ['<%= __("It’s a snow day! We should do our favorite things with our day off!") %>', '<%= __("Would you rather be inside or outside?") %>', '<%= __("What do you like doing inside?") %>', '<%= __("What do you like doing outside?") %>', '<%= __("Bear, what’s your favorite thing to do?") %>', '<%= __("Monkey, what’s your favorite thing to do?") %>', '<%= __("Cat, what’s your favorite thing to do?") %>', '<%= __("Dog, what’s your favorite thing to do?") %>', '<%= __("Bear, let’s go exploring! ") %>', '<%= __("Monkey, let’s go skating!") %>', '<%= __("Cat, let’s paint!") %>', '<%= __("Dog, let’s take care of our plants!") %>', '<%= __("Bear, how does exploring make you feel?") %>', '<%= __("Monkey, how does skating make you feel?") %>', '<%= __("Cat, how does painting make you feel?") %>', '<%= __("Dog, how does gardening make you feel?") %>', '<%= __("Bear, where should we explore next?") %>', '<%= __("Monkey, what should we do next? Do we want to do more tricks?") %>', '<%= __("Cat, what should we paint next?") %>', '<%= __("Dog, what should we do next with our plants?") %>'];
+    var replayOptionsSnow1Prev = []; 
+  </script>
+
+  <!-- Snow Day Part 2 Voice Agent Prompts -->
+  <script>
+    var expandOptionsSnow2 = ['<%= __("Let’s look at the painting! Did we have fun posing for Cat? Did Cat have fun drawing?") %>', '<%= __("What should we do next?") %>', '<%= __("Let’s keep playing together! That way, nobody gets bored or tired!") %>', '<%= __("What are our favorite things? Is there something else we can do?") %>', '<%= __("How does playing together make us feel?") %>' ];
+    var expandRole1OptionsSnow2 = ['<%= __("Bear, we should pretend we’re exploring! Where should we go first?") %>', '<%= __("Bear, what’s your favorite place you’ve been?") %>', '<%= __("Bear, how does exploring make you feel?") %>' ];
+    var expandRole2OptionsSnow2 = ['<%= __("Monkey, we could play sports with the others! What sport would you want to play?") %>', '<%= __("Monkey, what’s your favorite sport to play?") %>', '<%= __("Monkey, how does playing sports make you feel?") %>' ];
+    var expandRole3OptionsSnow2 = ['<%= __("Cat, let’s draw something else! ") %>', '<%= __("Cat, let’s share our paints! Could we draw something together? What would it look like?") %>', '<%= __("Cat, what’s your favorite thing to draw?") %>', '<%= __("Cat, how does drawing and painting make you feel?") %>' ];
+    var expandRole4OptionsSnow2 = ['<%= __("Dog, let’s play with our plant again!") %>', '<%= __("Dog, what’s your favorite thing about gardening?") %>', '<%= __("Dog, how does gardening make you feel?") %>' ];
+    var replayOptionsSnow2Next = ['<%= __("It’s a snow day! We should do our favorite things with our day off!") %>', '<%= __("Bear, what’s your favorite thing to do?") %>', '<%= __("Bear, let’s read your exploring book!") %>', '<%= __("Monkey, what’s your favorite thing to do?") %>', '<%= __("Monkey, let’s practice basketball!") %>', '<%= __("Cat, what’s your favorite thing to do?") %>', '<%= __("Cat, let’s paint something!") %>', '<%= __("Dog, what’s your favorite thing to do?") %>', '<%= __("Dog, let’s take care of our plant!") %>',  '<%= __("Bear, where would you like to go when you go exploring?") %>', '<%= __("Monkey, what’s your favorite sport to play?") %>', '<%= __("Cat, what do you want to draw?") %>', '<%= __("Dog, what’s your favorite way to take care of your plant?") %>', '<%= __("How do you feel doing your favorite thing?") %>', '<%= __("Bear, how do you feel now that you’ve finished your book?") %>', '<%= __("Monkey, how do you feel now that you’ve practiced for awhile?") %>', '<%= __("Cat, have you come up with any ideas? Do you still feel stuck?") %>', '<%= __("Dog, how do you feel now that you’ve taken care of your plant?") %>', '<%= __("Bear, let’s see what the others are doing. What do you think they’re up to?") %>', '<%= __("Monkey, let’s see what the others are doing. What do you think they’re up to?") %>', '<%= __("Cat, let’s see what the others are doing. What do you think they’re up to?") %>', '<%= __("Dog, let’s see what the others are doing. What do you think they’re up to?") %>', '<%= __("Should we play with the others? Are they busy?") %>', '<%= __("What should we do together?") %>' ];
+    var replayOptionsSnow2Prev = [];
+  </script>
+
+  <!-- Holiday Party Voice Agent Prompts -->
+  <script>
+    var expandOptionsHoliday = ['<%= __("Let’s wait for our friends to show up for the party!") %>', '<%= __("What party games should we play?") %>', '<%= __("What should we do during the party?") %>', '<%= __("Should we come up with a plan for the party?") %>', '<%= __("How should we greet our guests?") %>', '<%= __("Let’s think about who is coming to the party!") %>' ];
+    var expandRole1OptionsHoliday = ['<%= __("Cat, let’s celebrate at our holiday party!") %>', '<%= __("Cat, what should we play at the party?") %>', '<%= __("Cat, what should we do during the party?") %>', '<%= __("Cat, the party has ended! Let’s come up with a plan to clean up!") %>', '<%= __("Cat, our guests have arrived! Where should we put their coats?") %>', '<%= __("Cat, do you remember someone coming to the party?") %>' ];
+    var expandRole2OptionsHoliday = ['<%= __("Horse, let’s celebrate at our holiday party!") %>', '<%= __("Horse, what should we play at the party?") %>', '<%= __("Horse, what should we do during the party?") %>', '<%= __("Horse, the party has ended! Let’s come up with a plan to clean up!") %>', '<%= __("Horse, where should the guests put their shoes?") %>', '<%= __("Horse, do you remember the name of a guest coming to the party?") %>' ];
+    var expandRole3OptionsHoliday = ['<%= __("Dog, let’s celebrate at our holiday party!") %>', '<%= __("Dog, what should we play at the party?") %>', '<%= __("Dog, what should we do during the party?") %>', '<%= __("Dog, the party has ended! Let’s come up with a plan to clean up!") %>', '<%= __("Dog, if our guests bring gifts, where should they put them?") %>', '<%= __("Dog, do you know who is coming to the party?") %>'];
+    var expandRole4OptionsHoliday = ['<%= __("Monkey, let’s celebrate at our holiday party!") %>', '<%= __("Monkey, what should we play at the party?") %>', '<%= __("Monkey, what should we do during the party?") %>', '<%= __("Monkey, the party has ended! Let’s come up with a plan to clean up!") %>', '<%= __("Monkey, where can the guests sit down?") %>', '<%= __("Monkey, do you remember who you invited to the party?") %>' ];
+    var replayOptionsHolidayNext = ['<%= __("We should throw a party for the holidays!") %>', '<%= __("Oh no! The house is too messy for a party!") %>', '<%= __("We need to come up with a plan. How are we going to get this house clean?") %>', '<%= __("What roles should everyone have? How can we divvy up our tasks?") %>', '<%= __("Dog, let’s clean up the toys around the house!") %>', '<%= __("Monkey, let’s wash the dishes in the sink!") %>', '<%= __("Cat, let’s vacuum around the house!") %>', '<%= __("Horse, let’s clean off the countertops and table!") %>', '<%= __("Both Cat and Dog need to be on the rug. How can we solve this problem?") %>'];
+    var replayOptionsHolidayPrev = [];
+  </script>
+
+  <!-- Blastoff Voice Agent Prompts -->
+  <script>
+    var expandOptionsBlastoff = ['<%= __("Look at that pretty planet! Should we go there next?") %>',     '<%= __("Has anyone seen aliens nearby? Should we go find out?") %>',     '<%= __("We should set up base on this planet! What do we need to create a shelter?") %>',     '<%= __("We could explore the planet while we’re here!") %>',     '<%= __("Does anyone want to see a star up close?") %>',     '<%= __("Wow! Did you see that comet?") %>'];
+    var expandRole1OptionsBlastoff = ['<%= __("Robot, can we make a communication device in case we come across any aliens?") %>',     '<%= __("Robot, can we create a travel plan? Where should we go next? After that?") %>',     '<%= __("Robot, do any of our friends need help? Should we ask them?") %>',     '<%= __("Robot, let’s make a gift for our friends to show them how much we appreciate them!") %>'];
+    var expandRole2OptionsBlastoff = ['<%= __("Dog, is any of our gear broken? Do we need to fix it?") %>',     '<%= __("Dog, can we upgrade our spaceship to go faster? What parts would we need?") %>',     '<%= __("Dog, can we fix anything in the spaceship that’s broken?") %>',     '<%= __("Dog, can we upgrade our spaceship to be sturdier? That way, our spaceship can survive a crash-landing!") %>'];
+    var expandRole3OptionsBlastoff = ['<%= __("Cat, let’s go explore that planet!") %>',     '<%= __("Cat, let’s go explore that star!") %>',     '<%= __("Cat, can we go any faster? What’s the fastest we can go?") %>',     '<%= __("Cat, can we go any slower? What’s the slowest we can go?") %>',     '<%= __("Cat, where should we explore next?") %>'];
+    var expandRole4OptionsBlastoff = ['<%= __("Horse, do we have enough of a food supply to last awhile?") %>',     '<%= __("Horse, what should we make for lunch?") %>',     '<%= __("Horse, what food would a robot enjoy?") %>',     '<%= __("Horse, can we find new supplies on a new planet? What new foods can we create from that?") %>'];
+    var replayOptionsBlastoffNext = ['<%= __("Robot, what do we need to do to go to space?") %>', '<%= __("Oh no! The spaceship crashed!") %>', '<%= __("Cat, let’s fly to the crash site and see what the noise was!") %>', '<%= __("How do we feel about the spaceship crashing?") %>', '<%= __("We need to fix the spaceship before we can blast off!") %>', '<%= __("Robot, what parts do we need to fix the spaceship?") %>', '<%= __("Dog, what parts do you need to fix the spaceship?") %>', '<%= __("Dog, do you have everything to fix the spaceship?") %>', '<%= __("We need to find someone to pilot our spaceship before we can blast off!") %>', '<%= __("Dog, who do we know who can pilot a spaceship?") %>', '<%= __("Robot, who do we know who can pilot a spaceship?") %>', '<%= __("Cat, can you test-drive the spaceship to make sure it works?") %>', '<%= __("If we want to stay in space for awhile, we need to make sure we can get food!") %>', '<%= __("Robot, let’s call Horse to see if they can cook for us!") %>', '<%= __("Horse, let’s answer our phone and see who’s calling!") %>',     '<%= __("Horse, can you cook enough meals for everyone?") %>', '<%= __("Horse, do you have everything you need to cook?") %>', '<%= __("With our team created, we have everything we will need in space! Now, we can start exploring!") %>', '<%= __("Cat, let’s blast off!") %>', '<%= __("Horse, let’s make lunch for everyone!") %>'];
+    var replayOptionsBlastoffPrev = []; 
+  </script>
+
+  <!-- Missing Bunny Voice Agent Prompts -->
+  <script>
+    var expandOptionsBunny = ['<%= __("We should find Bear’s jacket! Are there any clues as to where it could have gone?") %>',     '<%= __("Are there any more mysteries in Big City? We should try to solve them!") %>',     '<%= __("We should explore Big City! Who else could we help?") %>',     '<%= __("Does anyone have anything that has gone missing?") %>'];
+    var expandRole1OptionsBunny = ['<%= __("Dog, do you have any other cases that need solving? Who has been by your detective’s office recently?") %>',     '<%= __("Dog, do you see any clues about Bear’s jacket? Do you see any clues for a different case?") %>',     '<%= __("Dog, let’s ask the others questions! They might know something we don’t!") %>',     '<%= __("Dog, what do you need to solve a puzzle? What questions do you have?") %>'];
+    var expandRole2OptionsBunny = ['<%= __("Bear, where is the last place you saw your jacket?") %>',  '<%= __("Bear, do you see any clues about your jacket?") %>',  '<%= __("Bear, who should we ask about where it might have gone?") %>',     '<%= __("Bear, where is your favorite toy? What makes it special? Has it gone missing?") %>'];
+    var expandRole3OptionsBunny = ['<%= __("Cat, what else needs to be cleaned in Robot’s bedroom?") %>', '<%= __("Cat, where should Bear’s jacket be? Should we start our investigation there?") %>',     '<%= __("Cat, let’s clean up this room! It will make it easier to find clues!") %>',     '<%= __("Cat, has anything of yours gone missing? Should we start looking for it?") %>',     '<%= __("Cat, do you see any clues? You know where everything should be!") %>'];
+    var expandRole4OptionsBunny = ['<%= __("Robot, let’s help Bear find their jacket! They helped us find Bun-Bun!") %>',     '<%= __("Robot, has anything else gone missing?") %>',     '<%= __("Robot, do you see any clues?") %>',     '<%= __("Robot, who should we ask for help in finding Bear’s jacket? Should we go to Detective Dog again?") %>'];
+    var replayOptionsBunnyNext = ['<%= __("Bear, let’s play in the rain with Robot and Bun-Bun!") %>', '<%= __("Cat, it’s been raining all day! Should we see if anything needs to be tidied up?") %>', '<%= __("Cat, let’s wash Bun-Bun, so Robot can have a clean toy for tonight!") %>', '<%= __("Oh no! Robot’s stuffed bunny, Bun-Bun, has gone missing!") %>', '<%= __("Robot, how did you feel when Bun-Bun went missing?") %>', '<%= __("Robot, let’s find out where Bun-Bun went! What should we do first?") %>', '<%= __("Dog, how should we start to solve a mystery? Should we look for clues? Ask around?") %>', '<%= __("We need to look for clues in Robot’s bedroom! That’s where Robot last saw Bun-Bun!") %>', '<%= __("Dog, what clues do we see in Robot’s room?") %>', '<%= __("Robot, who could have seen Bun-Bun last? What questions should we ask them?") %>', '<%= __("Dog, let’s go ask Bear if they know where Bun-Bun could have gone!") %>', '<%= __("Bear, how did you feel when Robot thought you took Bun-Bun?") %>', '<%= __("Bear, what makes Bun-Bun a special toy?") %>',  '<%= __("Bear, let’s go to Robot’s room and see if we can find any more clues!") %>', '<%= __("Robot, what clues do we see in your room?") %>', '<%= __("Dog, let’s go ask Cat if they know where Bun-Bun could have gone!") %>', '<%= __("Cat, how did you feel when Robot thought you took Bun-Bun?") %>', '<%= __("Cat says Bun-Bun needed to be washed after playing in the rain. We should check out the washing machine!") %>', '<%= __("Bear says their jacket went missing! Can we solve that mystery?") %>'];
+    var replayOptionsBunnyPrev = [];
+  </script>
+
+  <!-- Super Spies Voice Agent Prompts -->
+  <script>
+  var expandOptionsSpies = ['<%= __("The path we came from is blocked! Is there another way out?") %>', '<%= __("There are more guards! How can we distract them?") %>', '<%= __("Does anyone see anything dangerous?") %>'];
+  var expandRole1OptionsSpies = ['<%= __("Robot, what are you best at? What is your special skill?") %>', '<%= __("Robot, what do you notice? Does anything seem dangerous?") %>', '<%= __("Robot, are there any booby traps nearby? Can we turn them off?") %>', '<%= __("Robot, can you access the cameras still? Is there anyone nearby?") %>', '<%= __("Robot, can you turn off the alarm?") %>'];
+  var expandRole3OptionsSpies = ['<%= __("Bear, what are you best at? What is your special skill?") %>', '<%= __("Bear, what do you notice? Does anything seem dangerous?") %>', '<%= __("Bear, this hallway is blocked! Can you clear a path?") %>', '<%= __("Bear, how heavy is the Emerald? Can you carry it all the way back home?") %>', '<%= __("Bear, is anything out of the ordinary?") %>'];
+  var expandRole2OptionsSpies = ['<%= __("Cat, what are you best at? What is your special skill?") %>', '<%= __("Cat, what do you notice? Does anything seem dangerous?") %>', '<%= __("Cat, are there obstacles we need to get around?") %>', '<%= __("Cat, there is danger! Can you run fast?") %>', '<%= __("Cat, is anything out of the ordinary?") %>'];
+  var expandRole4OptionsSpies = ['<%= __("Horse, what are you best at? What is your special skill?") %>', '<%= __("Horse, what do you notice? Does anything seem dangerous?") %>', '<%= __("Horse, there are guards! We need to distract them!") %>', '<%= __("Horse, is there a way we can blend in with the guards?") %>', '<%= __("Horse, how can we act so the guards aren’t suspicious?") %>'];
+  var replayOptionsSpiesNext = ['<%= __("What’s our mission?") %>', '<%= __("Horse, there are guards! What can you do to distract them?") %>', '<%= __("Bear, do you remember what Horse’s signal is?") %>', '<%= __("Horse, the guards are starting to look in the direction of your crew! What can we do?") %>', '<%= __("How do we get down the hallway without being noticed?") %>', '<%= __("Robot, we think the guards might see us. What can you do to help?") %>', '<%= __("How do we get past the lasers?") %>', '<%= __("Cat, can you show me how to get through the lasers?") %>', '<%= __("Cat, the off-switch is over there! Can you reach it?") %>', '<%= __("Robot, what’s going on with the lasers? Are they coming back on?") %>', '<%= __("Oh, no! The door is closing. How do we make sure everyone gets through?") %>', '<%= __("Bear, the door is closing! What can we do?") %>', '<%= __("We’ve got the Emerald! How are we going to get out?") %>'];
+  var replayOptionsSpiesPrev = [];   
+  </script>
+
+  <!-- Summer Camp Voice Agent Prompts -->
+  <script>
+  var expandOptionsCamp = ['<%= __("Let’s go exploring!") %>', '<%= __("Let’s go canoeing!") %>', '<%= __("Let’s ride bikes!") %>', '<%= __("Let’s learn how to make friendship bracelets!") %>'];
+  var expandRole1OptionsCamp = ['<%= __("Cat, let’s paint a picture of the camp!") %>', '<%= __("Cat, we should make arts and crafts with our new friends.") %>', '<%= __("Cat, we should use nature to make a painting!") %>', '<%= __("Cat, let’s see what everyone else is doing! Maybe we can join in!") %>', '<%= __("Cat, we should ask Monkey if we should play Frisbee again.") %>'];
+  var expandRole2OptionsCamp = ['<%= __("Bear, let’s teach everyone how to make friendship bracelets!") %>', '<%= __("Bear, let’s show people how to put up a tent!") %>', '<%= __("Bear, let’s show people the best spots in the camp!") %>', '<%= __("Bear, let’s learn how to paint from Cat!") %>'];
+  var expandRole3OptionsCamp = ['<%= __("Robot, let’s write a story about our friends!") %>', '<%= __("Robot, let’s write a story about our time at camp!") %>', '<%= __("Robot, let’s ask Monkey what they’re doing! Maybe we can play with them!") %>', '<%= __("Robot, let’s make a journal for every day we’re at camp.") %>', '<%= __("Robot, we should spend time with our friends.") %>'];
+  var expandRole4OptionsCamp = ['<%= __("Monkey, let’s go canoeing!") %>', '<%= __("Monkey, let’s go play soccer!") %>', '<%= __("Monkey, let’s go play volleyball!") %>', '<%= __("Monkey, let’s go play baseball!") %>', '<%= __("Monkey, we should find friends to play sports with!") %>'];
+  var replayOptionsCampNext = ['<%= __("It’s the first day of camp!") %>', '<%= __("We need to unpack!") %>', '<%= __("How are you feeling about the first day of camp?") %>', '<%= __("Bear, do we have all the supplies we need to make friendship bracelets?") %>', '<%= __("Monkey, let’s go play Frisbee!") %>', '<%= __("If we want to play Frisbee, we need to find a friend to play with!") %>', '<%= __("Bear, where’s the best place to play Frisbee?") %>', '<%= __("Let’s talk to someone new!") %>', '<%= __("We should offer someone help! What if they don’t know how to play Frisbee?") %>'];
+  var replayOptionsCampPrev = [];   
+  </script>
+
+  <!-- Treasure Hunt Voice Agent Prompts -->
+  <script>
+  var replayOptionsTreasureNext = ['<%= __("Let’s sail to find treasure! Who knows the way?") %>', '<%= __("Horse, what are you most excited for on the island?") %>', '<%= __("Dog, how does it make you feel when Bear does your job?") %>', '<%= __("Bear, there’s a storm! What do we need to do to prepare?") %>', '<%= __("Bear, how does the storm make you feel?") %>', '<%= __("Bear is getting upset. How do we calm Bear down?") %>', '<%= __("Horse is hurt! Who can help Horse?") %>', '<%= __("Horse, you’re injured! What should we do?") %>', '<%= __("Dog, Horse is injured! How do we help?") %>', '<%= __("We have gone off-course! How can we find our way back?") %>', '<%= __("Monkey, how did getting off-course make you feel?") %>', '<%= __("Dog, how do we feel when Monkey yells at us?") %>', '<%= __("We have made it to the island! What are we going to do?") %>'];
+  var replayOptionsTreasurePrev = [];
+  var replayRole3OptionsTreasure = ['<%= __("Bear, what should we do before we get to the island?") %>',  '<%= __("Bear, what do we say to Dog and Monkey when they are fighting?") %>'];
+  var expandOptionsTreasure = ['<%= __("Can you see any sea creatures on the beach?") %>', '<%= __("What do you want to do on the beach?") %>', '<%= __("How do we find the treasure?") %>', '<%= __("Is the ship looking okay?") %>', '<%= __("Where do we want to set sail to next?") %>'];
+  var expandRole1OptionsTreasure = ['<%= __("Monkey, what’s your plan for finding the treasure?") %>', '<%= __("Monkey, who are you bringing with you to find the treasure?") %>', '<%= __("Monkey, does the crew need anything?") %>', '<%= __("Monkey, besides treasure, what do you think is valuable?") %>'];
+  var expandRole4OptionsTreasure = ['<%= __("Horse, what are you doing on the beach?") %>', '<%= __("Horse, does anyone need your help?") %>', '<%= __("Horse, how does your hoof feel? Do you need anything for it?") %>', '<%= __("Horse, let’s teach one of our friends how to be a medic!") %>'];
+  var expandRole2OptionsTreasure = ['<%= __("Dog, can you make a map of the island?") %>', '<%= __("Dog, is there a map to the treasure? Can you read it?") %>', '<%= __("Dog, can you show Bear some of the maps?") %>', '<%= __("Dog, let’s check up on Horse. Is Horse still okay?") %>'];
+  var expandRole3OptionsTreasure = ['<%= __("Bear, is the boat okay?") %>', '<%= __("Bear, what supplies do you need for the boat?") %>', '<%= __("Bear, do you need any help? Should you ask the crew for help?") %>', '<%= __("Bear, do we want to build anything on the beach?") %>'];     
+  </script>
+
+  <!-- Treasure Hunt Short Voice Agent Prompts -->
+  <script>
+  var replayOptionsTreasureShortNext = ['<%= __("Let’s sail to find treasure! Who knows the way?") %>', '<%= __("Oh no! There’s a storm! What do we do?") %>', '<%= __("We have gone off-course! How can we find our way back?") %>', '<%= __("Monkey, how did getting off-course make you feel?") %>', '<%= __("Dog, how do we feel when Monkey yells at us?") %>', '<%= __("Bear, what do we say to Dog and Monkey when they are fighting?") %>', '<%= __("We have made it to the island! What are we going to do?") %>'];
+  var replayOptionsTreasureShortPrev = [];
+  var expandOptionsTreasureShort = ['<%= __("Can you see any sea creatures on the beach?") %>', '<%= __("What do you want to do on the beach?") %>', '<%= __("How do we find the treasure?") %>', '<%= __("Is the ship looking okay?") %>', '<%= __("Where do we want to set sail to next?") %>'];
+  var expandRole1OptionsTreasureShort = ['<%= __("Monkey, what’s your plan for finding the treasure?") %>', '<%= __("Monkey, who are you bringing with you to find the treasure?") %>', '<%= __("Monkey, does the crew need anything?") %>', '<%= __("Monkey, besides treasure, what do you think is valuable?") %>'];
+  var expandRole4OptionsTreasureShort = ['<%= __("Horse, what are you doing on the beach?") %>', '<%= __("Horse, does anyone need your help?") %>', '<%= __("Horse, how does your hoof feel? Do you need anything for it?") %>', '<%= __("Horse, let’s teach one of our friends how to be a medic!") %>'];
+  var expandRole2OptionsTreasureShort = ['<%= __("Dog, can you make a map of the island?") %>', '<%= __("Dog, is there a map to the treasure? Can you read it?") %>', '<%= __("Dog, can you show Bear some of the maps?") %>', '<%= __("Dog, let’s check up on Horse. Is Horse still okay?") %>'];
+  var expandRole3OptionsTreasureShort = ['<%= __("Bear, is the boat okay?") %>', '<%= __("Bear, what supplies do you need for the boat?") %>', '<%= __("Bear, do you need any help? Should you ask the crew for help?") %>', '<%= __("Bear, how did getting off-course make you feel?") %>'];     
+  </script>
+
+  <!-- Big Event Voice Agent Prompts -->
+  <script>
+  var replayOptionsBigEventNext = ['<%= __("Wow! Look at this invitation! What do you think it’s for?") %>', '<%= __("Monkey, what do you think will happen at the event? Why?") %>', '<%= __("Remember Cat’s pool, Monkey? Can you show me how to swim?") %>', '<%= __("Robot, what do you think will happen at the event? Why?") %>', '<%= __("Robot, remember that magician? Can you do a magic trick?") %>', '<%= __("Bear, can you show me how sleepy you are?") %>', '<%= __("Dog, what do you think will happen at the event? Why?") %>', '<%= __("Dog, can you show me how to act fancy?") %>', '<%= __("Let’s go get ready for the big event!") %>', '<%= __("If this is a pool party, what should we bring?") %>', '<%= __("If this is a fancy party, what should we bring?") %>', '<%= __("If this is a circus party, what should we bring?") %>', '<%= __("Bear, are you awake?") %>', '<%= __("Bear, what do you think will happen at the event? Why?") %>', '<%= __("Everyone’s dressed so differently. Who’s the most prepared, do you think?") %>', '<%= __("Can you think of a clue that might tell us what sort of event this is?") %>', '<%= __("Bear, how can we fix Cat’s day?") %>', '<%= __("Oh no! It’s a birthday party! Let’s get ready fast!") %>', '<%= __("Yay! We’re all prepared to party! How are you having fun?") %>'];
+  var replayOptionsBigEventPrev = [];
+  var expandOptionsBigEvent= ['<%= __("What games can we play at Cat’s party?") %>', '<%= __("Cat still needs help preparing! What can we do to get this party ready?") %>', '<%= __("The cake isn’t ready yet! Let’s work together to make a cake!") %>', '<%= __("OH NO! The party is a disaster! Make up a story about how it goes wrong!") %>', '<%= __("DANCE PARTY! Show me your best dance moves! ") %>'];
+  var expandRole1OptionsBigEvent = ['<%= __("Monkey, do you know how to make this party a splash?") %>', '<%= __("When was the last time you went to a pool party?") %>', '<%= __("Monkey, can you convince the others to put on swimsuits, too?") %>', '<%= __("Monkey, do you have any extra towels we could use as capes?") %>', '<%= __("Monkey, how can you make this day special for Cat?") %>', '<%= __("Hmm... looks like we can’t get in the pool. How can we still play with water?") %>', '<%= __("Monkey, can you pretend to be a sea animal?") %>'];
+  var expandRole2OptionsBigEvent = ['<%= __("Dog, do you know how to make this party fancy?") %>', '<%= __("Dog, who taught you how to be so fancy?") %>', '<%= __("Dog, can you convince the others to dress up nice, too?") %>', '<%= __("Dog, what does it mean to be fancy?") %>', '<%= __("Dog, what’s the fanciest gift you could get Cat?") %>', '<%= __("Dog, what could make this party even fancier?") %>', '<%= __("Dog, can you tell me about what you’re wearing?") %>', '<%= __("Dog, how can you make this day special for Cat?") %>', '<%= __("Hmmm... looks like we’re not going to a ball. How can we still enjoy being fancy?") %>', '<%= __("Dog, can you pretend to be someone elegant and important? Who are you?") %>'];
+  var expandRole3OptionsBigEvent = ['<%= __("Robot, do you know how to make this party silly?") %>', '<%= __("Robot, what kind of clown are you supposed to be?") %>', '<%= __("Robot, can you convince the others to dress up silly, too?") %>', '<%= __("Robot, how can you make this day special for Cat?") %>', '<%= __("Hmmm... looks like there’s no circus. How can we still play with costumes and makeup?") %>', '<%= __("Robot, can you pretend to be different circus animals?") %>'];
+  var expandRole4OptionsBigEvent = ['<%= __("Bear, what’s in the present? Is it heavy?") %>','<%= __("Bear, can you convince the others to dress up in pj’s, too?") %>', '<%= __("Bear, how can you make this day special for Cat?") %>', '<%= __("Hmmm... looks like it’s not naptime. How can we still enjoy being cozy?") %>', '<%= __("Bear, what were you dreaming about during hibernation?") %>'];     
+  </script>
+
+  <!-- Mystery Present Voice Agent Prompts -->
+  <script>
+  var replayOptionsPresentNext = ['<%= __("Horse, I heard you got a present on your doorstep today. How did you find it?") %>', '<%= __("Horse, we don’t know what’s inside the present. Who should we ask to help us find out?") %>', '<%= __("Horse got a mystery present! What do we think is inside?") %>', '<%= __("Dog, Horse needs your help to figure out what the present is! Can you think of some ways to find clues?") %>', '<%= __("The letter says not to open the present until tonight... how can we figure out what it is without opening it?") %>', '<%= __("Bear, we think the present is a toy, and we know it is medium-sized! What toys are medium-sized?") %>', '<%= __("Bear, the box makes a clunking sound when we shake it! What toys make clunking sounds?") %>', '<%= __("Cat, is there anything special about today? ") %>', '<%= __("Dog, we’ve figured out the present is medium-sized, heavy, makes a clunking sound, and was given when a comet is passing by the Earth. What do we think it could be?") %>', '<%= __("Cat, we think the toy might be related to the comet! What tools or toys do you use to help see comets better?") %>', '<%= __("Bear, you own one of the best toy stores in Big City. What toys have been flying off the shelves due to the comet?") %>', '<%= __("Horse, we know the gift is a telescope! Are we missing any other information? Do we know who gave it to us?") %>', '<%= __("It was fun solving the mystery together! Now, let’s go watch the comet together!") %>'];
+  var replayOptionsPresentPrev = [];
+  var expandOptionsPresent= ['<%= __("Wow! Look how pretty the comet looks as it goes across the sky!") %>', '<%= __("It’s fun to have a stargazing party together! What things do we want to do tonight?") %>', '<%= __("The comet is exciting, but we can see other things in the sky tonight! What else can you see?") %>', '<%= __("We should call it a night. Do we have any fun plans together?") %>'];
+  var expandRole1OptionsPresent = ['<%= __("Dog, you’re the greatest detective in Big City! What are some fun cases you’ve solved?") %>', '<%= __("Dog, what other mysteries can we solve tonight?") %>', '<%= __("Dog, look at the comet! Do you think you could figure out where it would land? What clues would you look for?") %>', '<%= __("Dog, I think the others are getting hungry. Can we sniff out where the food is?") %>', '<%= __("Dog, let’s call it a night. What are you going to do as a detective tomorrow?") %>'];
+  var expandRole2OptionsPresent = ['<%= __("Bear, I think Horse needs help setting up the telescope! Can you help them?") %>', '<%= __("Bear, a lot of people are here with telescopes! Do you have any stories about selling them to them?") %>', '<%= __("Bear, can you come up with any stories about the stars?") %>', '<%= __("Bear, let’s call it a night. Do you think anything will happen at the toy store tomorrow?") %>'];
+  var expandRole3OptionsPresent = ['<%= __("Cat, it is an exciting day to be an astronomer! What does an astronomer do?") %>', '<%= __("Cat, I don’t see the comet. Can you predict when it will come? Based on what?") %>', '<%= __("Cat, the comet is fun to look at! What are other things you can identify in the sky right now?") %>', '<%= __("Cat, do you know any constellations?") %>', '<%= __("Cat, let’s call it a night. What can you see in the sky when it’s morning?") %>'];
+  var expandRole4OptionsPresent = ['<%= __("Horse, let’s set up your telescope! Do we have everything we need?") %>', '<%= __("Horse, do you see anything that’s out of place? Should we tell anyone?") %>', '<%= __("Horse, is the view different when you use your telescope than when you don’t? How is it different?") %>', '<%= __("Horse, let’s call it a night. Do we think anything will happen tomorrow?") %>'];     
+  </script>
+
+  <!-- Wild West Voice Agent Prompts -->
+  <script>
+  var replayOptionsWestNext = ['<%= __("Monkey, your cows have gone missing! What happened?") %>', '<%= __("Monkey, who should we ask to help find your cows?") %>', '<%= __("Let’s gather our friends together to help us look!") %>', '<%= __("Horse, how can we help Monkey find the cows?") %>', '<%= __("Let’s go into town to search!") %>', '<%= __("Cat, we’re going into town! Is there anything we should keep in mind?") %>', '<%= __("Cat, what happened to the cantina?") %>', '<%= __("Dog, can you see Cat?") %>', '<%= __("Cat, is everyone listening?") %>', '<%= __("Horse, is everyone staying on task?") %>', '<%= __("Horse, what are we all supposed to be doing now?") %>', '<%= __("The door to the cantina is broken! Are there other clues inside?") %>', '<%= __("We’re in the cantina. Let’s see if we can find some clues.") %>', '<%= __("Cat, what clues did you find? ") %>', '<%= __("Dog, what do you smell?") %>', '<%= __("Monkey, are you paying attention to Cat?") %>', '<%= __("Dog, what do your clues mean?") %>', '<%= __("We found the cows! How are we going to get them back home?") %>'];
+  var replayOptionsWestPrev = [];
+  var expandOptionsWest= ['<%= __("The cantina is still broken! What can we do to help Cat fix it?") %>', '<%= __("We finally made it to the creek! What activities can we do?") %>', '<%= __("How can we keep an eye on the cows so they don’t escape again?") %>'];
+  var expandRole1OptionsWest = ['<%= __("Monkey, how can we fix our cantina?") %>', '<%= __("Monkey, what do you do when you need to focus?") %>', '<%= __("Monkey, how can we bring the cows home?") %>', '<%= __("Monkey, what is your favorite thing to do at the creek?") %>', '<%= __("Monkey, how can we keep the cows from escaping again?") %>'];
+  var expandRole2OptionsWest = ['<%= __("Cat, how can we fix our cantina?") %>', '<%= __("Cat, what is everyone in town saying about the missing cows?") %>', '<%= __("Cat, how can we bring the cows home?") %>', '<%= __("Cat, what is your favorite thing to do at the creek?") %>', '<%= __("Cat, how can we keep the cows from escaping again?") %>'];
+  var expandRole3OptionsWest = ['<%= __("Horse, what can we do to fix up the cantina?") %>', '<%= __("Horse, how do you keep everyone on task?") %>', '<%= __("Horse, how can we bring the cows home?") %>', '<%= __("Horse, what is your favorite thing to do at the creek?") %>', '<%= __("Horse, how can we keep the cows from escaping again? ") %>'];
+  var expandRole4OptionsWest = ['<%= __("Dog, how can we bring the cows home?") %>', '<%= __("Dog, what else do you smell in the cantina?") %>', '<%= __("Dog, what is your favorite thing to do at the creek?") %>', '<%= __("Dog, how can we keep the cows from escaping again?") %>'];     
+  </script>
+
+  <!-- Prophecy Voice Agent Prompts -->
+  <script>
+  var replayOptionsProphecyNext = ['<%= __("Monkey, what do you want to do today?") %>', '<%= __("Horse, do you have information for your friends?") %>', '<%= __("Oh no! This prophecy sounds bad. What should you do?") %>', '<%= __("Bear, how do you feel after listening to the prophecy?") %>', '<%= __("What does the prophecy say we should do first, Horse?") %>', '<%= __("Cat, what do we have to do first?") %>', '<%= __("Where should we go first, Bear?") %>', '<%= __("We made it to fairy land! Bear, can you ask the fairies for their wand?") %>', '<%= __("How should we get the wand from the fairies?") %>', '<%= __("We’re trying to get the wand, but the fairies don’t want to give it to us! Cat, what should we do?") %>', '<%= __("Horse, what is the fairy saying?") %>', '<%= __("Where should we go next?") %>', '<%= __("Bear, do you remember the prophecy?") %>', '<%= __("We have to tell our friends the prophecy again! What can they do to show us they are listening?") %>', '<%= __("Monkey, how can we show Horse we are listening to them?") %>', '<%= __("Do we think the mermaids will give us the key?") %>', '<%= __("We made it to the ocean! Are the mermaids paying attention?") %>', '<%= __("What’s our last stop?") %>', '<%= __("The dragon is really scary! Cat, should we try talking to him?") %>', '<%= __("This dragon can’t hear us! Monkey, can you help him hear?") %>', '<%= __("We have to get back to our village! What’s the fastest way there?") %>'];
+  var replayOptionsProphecyPrev = [];
+  var expandOptionsProphecy= ['<%= __("Can we read the spell? What do we need to perform it?") %>', '<%= __("Who should perform the spell to save our village?") %>', '<%= __("Did we save the village?") %>'];
+  var expandRole1OptionsProphecy = ['<%= __("Monkey, do you know how to read the spell book?") %>', '<%= __("We need another ingredient for the spell! What is it?") %>', '<%= __("We have everything we need. How can we get back to the village?") %>', '<%= __("What should we do to help the village? Can we perform the spell?") %>', '<%= __("The spell book says it needs four people to perform it! Who should the four people be?") %>'];
+  var expandRole2OptionsProphecy = ['<%= __("Bear, we need to find a special plant! Do you know where it is?") %>', '<%= __("We found it! Can you lead the way to our village?") %>', '<%= __("How do you feel about performing the spell? Are you scared? Excited?") %>', '<%= __("Bear, how many people does it take to read the spell?") %>'];
+  var expandRole3OptionsProphecy = ['<%= __("Cat, does the spell book say we need anything else?") %>', '<%= __("What does the plant look like, Cat?") %>', '<%= __("We made it to our village! Does anything look destroyed yet?") %>', '<%= __("It takes four people to read the spell! Who should do it with us?") %>'];
+  var expandRole4OptionsProphecy = ['<%= __("Horse, we got the spellbook! What should we do next?") %>', '<%= __("Do we know where the plant for the spell is?") %>', '<%= __("Did the prophecy say anything about how to perform the spell?") %>', '<%= __("Horse, do we know how to do spells?") %>'];     
+  </script>
+
+  <!-- Sugar World Voice Agent Prompts -->
+  <script>
+  var replayOptionsSugarNext = ['<%= __("Wow! Let’s show MiniBird around Sugar World!") %>', '<%= __("Monkey, why are you upset?") %>', '<%= __("Horse, how do Monkey’s words make you feel?") %>', '<%= __("Monkey, how can you be better friends with Horse?") %>', '<%= __("Bear, how much farther do we need to go?") %>', '<%= __("Welcome to Gummy Bear Gorge! What do you want to do first?") %>', '<%= __("Bear, what can you show us in Gummy Bear Gorge?") %>', '<%= __("Welcome to Lollipop Land. What is your favorite lollipop flavor?") %>', '<%= __("Horse, what a big lollipop forest! Let’s explore!") %>', '<%= __("Oh no! Dog got stuck on a lollipop! What should we do?") %>', '<%= __("Dog, how do we get ourselves out of this sticky situation?") %>', '<%= __("Horse, what do we do when someone gets stuck? You know best!") %>', '<%= __("Ooh, a corn maze! Which way should we go first?") %>', '<%= __("Dog, can you lead us through the maze?") %>', '<%= __("Horse, this maze is really confusing. Should we ask for help?") %>', '<%= __("We’re lost! Who can we call?") %>', '<%= __("Bear, you just fell! What happened to your leg?") %>', '<%= __("Dog, how can we help Bear while we wait for Robot?") %>', '<%= __("Chocolate City is just ahead! What should we do?") %>'];
+  var replayOptionsSugarPrev = [];
+  var replayRole4OptionsSugar = [  '<%= __("Bear, how can we get Dog down?") %>', '<%= __("Bear, are you excited for the maze?") %>'];
+  var expandOptionsSugar= ['<%= __("Do you like the country or the city better? Why?") %>', '<%= __("What other candies should be in Sugar World?") %>', '<%= __("Where would you want to live?") %>'];
+  var expandRole1OptionsSugar = ['<%= __("Monkey, what do you want to show us when we get to Chocolate City?") %>', '<%= __("Monkey, what has been your favorite part of the tour?") %>', '<%= __("Monkey, what new building does Chocolate City need?") %>', '<%= __("Monkey, where’s the best place in Sugar World to go for a run?") %>'];
+  var expandRole2OptionsSugar = ['<%= __("Horse, how do we plant new lollipops?") %>', '<%= __("Horse, we want everyone to be safe when they visit Lollipop Land. How do we keep them safe?") %>', '<%= __("Horse, what are other ways to get someone to get unstuck from lollipop?") %>', '<%= __("Horse, how do we tell a friend when we feel sad?") %>'];
+  var expandRole3OptionsSugar = ['<%= __("Dog, what’s your favorite place in Sugar World so far?") %>', '<%= __("Dog, how do we get this sticky stuff out of our fur?") %>', '<%= __("Dog, what’s your favorite treat to eat?") %>', '<%= __("Dog, what are other things to do in Candy Corn Country?") %>', '<%= __("Dog, what activities go on in Candy Corn Country in other seasons?") %>'];
+  var expandRole4OptionsSugar = ['<%= __("Bear, which area do you want to visit again?") %>', '<%= __("Bear, can you take us on the walking path down Gummy Bear Gorge? Be careful – it’s narrow!") %>', '<%= __("Bear, let’s play in the Gummy Bear Waterfall!") %>', '<%= __("Bear, what’s been the biggest problem ever in Gummy Bear Gorge?") %>'];     
+  </script>
+
+  <!-- TEST: changing role vars in storyData to translate them -->
+  <script>
+    var finderRole = '<%= __("I am the finder. I can find anything the group needs.") %>';
+    var makerRole = '<%= __("I am a maker. I can make anything new that our team needs.") %>';
+    var chefRole = '<%= __("I am the chef. I can gather and prepare any food we need.") %>';
+    var builderRole = '<%= __("I am the builder. I can build anything the group needs.") %>';
+    var healerRole = '<%= __("I am the healer. I can take care of anyone who is hurt or sick.") %>';
+    var dreamerRole = '<%= __("I am the dreamer. I have all the ideas for the group.") %>';
+    var muscleRole = '<%= __("I am the muscle. I am the strongest of the group.") %>';
+    var waterRole = '<%= __("I am the lord of the sea. I am the master of water.") %>';
+    var growerRole = '<%= __("I am a grower. I can grow anything that our team needs.") %>';
+    var fixerRole = '<%= __("I am a fixer. I can fix any broken thing.") %>';
+    var driverRole = '<%= __("I am a driver. I can drive any vehicle that we find.") %>';
+    var explorerRole = '<%= __("I’m the explorer! I like to find new things!") %>';
+    var athleteRole = '<%= __("I’m the athlete! I like to ice-skate!") %>';
+    var artistRole = '<%= __("I’m the artist! I like to create!") %>';
+    var artistRole2 = '<%= __("I am the artist! I can create a lot of beautiful things.") %>';
+    var gardenerRole = '<%= __("I’m the gardener! I like to take care of my plants!") %>';
+    var plannerRole = '<%= __("I am the planner! When something needs to get done, I make a plan with the rest of my friends!") %>';
+    var peacemakerRole = '<%= __("I am the peacemaker! If an argument happens between my friends, I help them out!") %>';
+    var taskmasterRole = '<%= __("I am the taskmaster! When I start doing a task, I make sure it gets done!") %>';
+    var problemSolverRole = '<%= __("I am the problem-solver! I can solve any problem!") %>';
+    var dreamerRole2 = '<%= __("I am the dreamer! I help think of ideas!") %>';
+    var fixerRole2 = '<%= __("I am the fixer! I can fix anything!") %>';
+    var pilotRole = '<%= __("I am the pilot! I can fly anywhere in our spaceship!") %>';
+    var chefRole2 = '<%= __("I am the chef! I can cook lots of tasty foods!") %>';
+    var detectiveRole = '<%= __("I am the detective! I’m good at solving puzzles.") %>';
+    var storeOwnerRole = '<%= __("I am the store owner! I know all about toys.") %>';
+    var cleanerRole = '<%= __("I am the cleaner! I make sure everything is nice and neat, and I know where everything goes!") %>';
+    var reporterRole = '<%= __("I am the reporter! I keep track of everything when things go wrong.") %>';
+    var hackerRole = '<%= __("I’m the hacker. I’m a genius with computers.") %>';
+    var dancerRole = '<%= __("I’m the dancer. I’m super flexible and can get into all the small spaces.") %>';
+    var actorRole = '<%= __("I’m the actor. I can blend in anywhere.") %>';
+    var camperRole = '<%= __("I am the camper! I know all the secrets of camp.") %>';
+    var writerRole = '<%= __("I am the writer! I know how to tell good stories.") %>';
+    var athleteRole2 = '<%= __("I am the athlete! I can play any sport!") %>';
+    var lordoftheseaRole = '<%= __("Yaaaargh! I am the Lord of the Sea, Master of Water! I make sure everything runs smoothly on the water!") %>';
+    var navigatorRole = '<%= __("Ahoy, mateys! I am the navigator! I make sure the boat is heading in the right direction!") %>';
+    var boatswainRole = '<%= __("I am the boatswain! I make sure everything on-board is ship-shape! If anything is broken, I fix it!") %>';
+    var medicRole = '<%= __("I am the medic! I make sure everyone’s feeling alright on the boat!") %>';
+    var swimmerRole = '<%= __("I’m Monkey! I love swimming, so I thought the event was going to be a pool party!") %>';
+	  var socialiteRole = '<%= __("I’m Dog! I like fancy parties, and so I thought the event was going to be a formal one.") %>';
+	  var clownRole = '<%= __("I’m Robot! I love entertaining, and I’m always looking for the main event—I thought Cat was having a circus.") %>';
+	  var snoozerRole = '<%= __("I’m Bear! I just woke up, so I’m still in my pajamas.") %>';
+	  var astronomerRole = '<%= __("I am the astronomer! I know everything about the stars!") %>';
+	  var reporterRole2 = '<%= __("I am the reporter! I helped us figure out what we needed to solve!") %>';
+    var rancherRole = '<%= __("I’m the rancher! I look after a lot of cows, but sometimes I get a little distracted...") %>';
+	  var cantinaRole = '<%= __("I’m the cantina owner! I notice when things change in the cantina, and I know all the gossip in town.") %>';
+	  var taskmasterRole2 = '<%= __("I’m the task-master! I make sure the group is staying on task!") %>';
+	  var searcherRole = '<%= __("I’m the searcher. I’m good at finding clues.") %>';
+    var braveRole = '<%= __("I’m brave! When there’s a scary problem, I will be the first one to step up!") %>';
+    var navigatorRole2 = '<%= __("I’m the navigator! I know the way, all over Story-Carnivia!") %>';
+    var leaderRole = '<%= __("I’m the leader! I keep everyone on track!") %>';
+    var oracleRole = '<%= __("I’m the oracle! That means I can see the future and say the prophecy!") %>';
+    var chocolateRole = '<%= __("I’m Monkey! I’m the Chocolate Champion of Chocolate City, and I’m also the athlete of the group!") %>';
+    var lollipopRole = '<%= __("I’m Horse! I’m the Lollipop Leader of Lollipop Land. I’m a scientist there, trying to find new lollipop flavors!") %>';
+    var candyCornRole = '<%= __("I’m Dog! I’m the Candy Corn Captain of Candy Corn Country. I’m also a farmer, and I helped grow the candy corn maze!") %>';
+    var gummyBearRole = '<%= __("I’m Bear! I’m the Gummy Bear Governor of Gummy Bear Gorge! There, I work as an architect, which is a fancy way to say I help design the buildings and houses!") %>';
+  </script>
+
+    <script src="/scripts/planner.js"></script>
+    <script src="/scripts/storyData.js"></script>
+    
+</head>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+    
+<body onload="playStory();">
+
+
+
+<script id="editable">
+    // get URL parameter to find out which story to play
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let langTitle = urlParams.get('title');
+    const path = langTitle.replace(/ /g, '_');
+    title = langTitle.slice(0, -3);
+
+    // paths for image and audio assets
+    musicPath = "/premade_stories/" + path + "_Audio/";
+    const imgPath = "/premade_stories/" + path + "_Images/";
+    const data = JSON.parse(storyData); // initialized in scripts/storyData.js
+    const numSlides = data[title]['slides'];
+    var slideImgs = [];
+
+    // navigate back a page
+    function goLeft(){
+    if(pages.index > 0){
+    pages.go(pages.index - 1, "left");
+    playAudio();
+    }
+    else{
+    }
+    }
+
+    // navigate forward a page
+    function goRight(){
+    if(pages.index < pages.pages.length - 1){
+    pages.go(pages.index + 1, "right");
+    playAudio();
+    }
+    else{
+    // move to play planner
+    planPlay();
+    stage.update();
+    }
+    }
+    
+    // set up pages object and add images to it
+    function createStoryPages(){
+    let pageList = []; // Temporary holder for slides
+    
+    for(let i = 0; i < numSlides; i++){
+    let page = new Container(stageW, stageH); // Create a container
+
+    frame.asset(imgPath + slideImgs[i]).clone().scaleTo(page, 100, 100).center(page); // Add image to container
+
+    pageList.push({page:page, swipe:[null,null,null,null]}); // Add placeholder to the list
+    }
+
+    // Swipe array indicates which page to load on right swipe, left swipe, down swipe, and up swipe
+    pageList[0].swipe = [null, pageList[1].page, null, null]; // Set up swipe array for the first slide
+    pageList[numSlides-1].swipe = [pageList[numSlides-2].page, null, null, null]; // Set up swipe array for the last slide
+
+    // Set up swipe arrays for all middle pages
+    for(let j = 1; j < numSlides - 1; j++){
+    pageList[j].swipe = [pageList[j - 1].page, pageList[j + 1].page, null, null];
+    }
+    
+    pages = new Pages({pages:pageList, holder:stage}); // Used for navigation
+    
+    pages.go(0, "left"); // Navigate to the first page, "left" is the direction of the transition
+    pages.addTo(stage, 0);
+    createNavigation();
+    stage.update();
+    playAudio();
+    }
+    
+    function createNavigation(){
+    // Hotspots to shift between pages
+    var hs = new HotSpots([
+    {page:stage, rect:[20,20,400,stageH-40], call:function(){goLeft();}}, // go back
+    {page:stage, rect:[stageW-420,20,400,stageH-40], call:function(){goRight();}} // go forward
+    ]);
+
+    // go back to the homepage
+    var homeButton = new Button({
+    width:100,
+    height:50,
+    backgroundColor:"#2c3e50",
+    rollBackgroundColor:"#f8f9fa",
+    //TEST: home button
+    label: new Label({text:'<%= __("HOME") %>', size:24, color:"#f8f9fa", rollColor:"dark"})
+    }).pos({x:10, y:10, container:stage});
+
+    homeButton.on("click", function(){
+    location.href = "/"; // Return to the home page of the website
+    });
+
+    }
+    
+    function playStory(){
+    let assets = [];
+    for(let i = 0; i < numSlides; i++){
+    let slideImg = "slide-" + i + ".png"; // Get name of image for slide
+    if (i < 10){
+    slideImg = slideImg.replace("-", "-0"); // Update to match naming convention for single-digit slides
+    }
+    slideImgs.push(slideImg); // Maintain list of image filenames
+    assets.push(imgPath + slideImg);
+
+    let slideAudio = slideImg.replace("-", "");
+    slideAudio = slideAudio.replace(".png", ".mp3");
+    //add breath to fix bluetooth audio errors
+    audio.push([breathAudio, slideAudio]); // Maintain list of audio filenames
+    }
+
+    premadeSlides = [assets[numSlides-4], assets[numSlides-3], assets[numSlides-2], assets[numSlides-1]]; // Role picker page images
+    premadeAudio = [audio[numSlides-4], audio[numSlides-3], audio[numSlides-2], audio[numSlides-1], [], [], []]; // Role picker page audio
+    
+    // Adding character images for play planner buttons
+    plannerImgPath = "../assets/";
+    assets.push(plannerImgPath + "Cat_neutral.png");
+    assets.push(plannerImgPath + "Bear_neutral.png");
+    assets.push(plannerImgPath + "Horse_neutral.png");
+    assets.push(plannerImgPath + "Monkey_neutral.png");
+    assets.push(plannerImgPath + "Dog_neutral.png");
+    assets.push(plannerImgPath + "Robot_neutral.png");
+    assets.push(plannerImgPath + "dice.png");
+    assets.push(plannerImgPath + "MiniBird.png");
+
+    frame = new Frame(scaling, stageW, stageH, color, outerColor, assets, '', progressBar);
+    // Loading font for role picker
+    frame.loadAssets({font:"Lato", src:"https://fonts.googleapis.com/css2?family=Lato&display=swap"});
+    
+    story = title;
+    // Fill in data about the characters in the story (order matters)
+    chosenCharacters = [new Character(data[title]['characters'][0]['id'], data[title]['characters'][0]['name'], data[title]['characters'][0]['img'], data[title]['characters'][0]['voice'], data[title]['characters'][0]['hasTail']), 
+        new Character(data[title]['characters'][1]['id'], data[title]['characters'][1]['name'], data[title]['characters'][1]['img'], data[title]['characters'][1]['voice'], data[title]['characters'][1]['hasTail']),  
+        new Character(data[title]['characters'][2]['id'], data[title]['characters'][2]['name'], data[title]['characters'][2]['img'], data[title]['characters'][2]['voice'], data[title]['characters'][2]['hasTail']), 
+        new Character(data[title]['characters'][3]['id'], data[title]['characters'][3]['name'], data[title]['characters'][3]['img'], data[title]['characters'][3]['voice'], data[title]['characters'][3]['hasTail'])];
+    // Fill in data about the background's name, text descriptions (called setting & background), and images (outer and inner)
+    chosenBackground = new Background(data[title]['background'][0], data[title]['background'][1], data[title]['background'][2], data[title]['background'][3], data[title]['background'][4]);
+    // Fill in data about chosen objects (each has a type, name, and image)
+    chosenObjects = data[title]['objects'];
+    // Fill in data about roles in the story
+    chosenRoles = data[title]['roles'];
+    
+    frame.on("ready", function(){
+    //var loading = frame.loadAssets(slideImgs, imgPath); // Load images
+    // Clear the stage
+    stage = frame.stage;
+    stageW = frame.width;
+    stageH = frame.height;
+
+    //loading.on("complete", function () {
+    createStoryPages();
+    
+    // create arrows for page navigation
+    right = new Button({
+    width:50,
+    height:50,
+    backgroundColor:dark,
+    rollBackgroundColor:dark,
+    corner:25,
+    label:"",
+    icon:pizzazz.makeIcon("play", "white")
+    }).center().mov((stageW / 2 - 120), 0).sca(2);
+
+    left = new Button({
+    width:50,
+    height:50,
+    backgroundColor:dark,
+    rollBackgroundColor:dark,
+    corner:25,
+    label:"",
+    icon:pizzazz.makeIcon("play", "white")
+    }).center().mov(-(stageW / 2 - 60), 0).sca(2);
+
+    left.icon.rotation = 180;
+    
+    stage.update();
+
+    left.on("click", function(){goLeft();});
+    right.on("click", function(){goRight();});
+    pages.on("go left", function(){goLeft();});
+    pages.on("go right", function(){goRight();});
+    //});
+    });
+    }
+   
+</script>
+</body>
+</html>

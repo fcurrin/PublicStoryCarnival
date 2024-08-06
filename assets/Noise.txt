@@ -1,0 +1,318 @@
+Page 1
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1]
+CENTER-LEFT: [Character 2]
+CENTER-RIGHT: [Character 3]
+RIGHT-CENTER-RIGHT: [Character 4]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 1] [Character 2] [Character 3] and [Character 4] were [activity] [background] together when they heard a strange noise.
+Page 2
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [sound effect]
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: What was that noise?
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: It sounded like it was coming from over there. Should we go investigate?
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_worried]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: I'm scared. What if it's a monster?
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: We will have to do our best to keep ourselves safe.
+Page 7
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1_looking]
+CENTER-LEFT: [Character 2_looking]
+CENTER-RIGHT: [Character 3_looking]
+RIGHT-CENTER-RIGHT: [Character 4_looking]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: The friends went out to look for what was making the strange noise.
+Page 8
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT: [MiniBird]
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 2_looking]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 2] is an expert finder and noticed a bird flittering around in the sky.
+Page 9
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:[MiniBird]
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 2_surprised]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: Look! A bird! Hello there little bird!
+Page 10
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP: [MiniBird]
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+MiniBird: Hello friends. My name is MiniBird. I have traveled a long way and I am very tired and hungry.
+Page 11
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Come with us MiniBird. I can make some [meal] for you.
+Page 12
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Yes and I can build a [furniture] where you can rest.
+Page 13
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP: [MiniBird]
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+MiniBird: Thank you so much! I have been flying for so long that my wings feel sore.
+Page 14
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: I can take a look at your wings. I am a healer and might be able to help.
+Page 15
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 1, meal-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:[MiniBird]
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Back [background] [Character 1] prepared some [meal] for MiniBird.
+Page 16
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 4, MiniBird-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 4] looked at MiniBird's wings and bandaged one up so that it would get better.
+Page 16
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT: [Character 3]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: [furniture], [MiniBird]
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 3] built a [furniture] where MiniBird fell fast asleep. The friends looked forward to learning more about MiniBird the next day.
+Page 17
+INT
+role: Chef
+Page 18
+INT
+role: Finder
+Page 19
+INT
+role: Builder
+Page 20
+INT
+role: Healer

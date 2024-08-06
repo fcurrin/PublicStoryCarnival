@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title id="Story Carnival"><%= __("Story Carnival") %></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href='<%= __("assets/img/SC_logo.png") %>' />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top" class="bg-primary">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="text-white js-scroll-trigger" href="/" id="Story Carnival"><%= __("Story Carnival") %></a>
+        <a class="btn btn-outline-light" href="/login" id="Log In">
+            <%= __("Log In") %>
+        </a>
+    </div>
+</nav>
+<header class="masthead bg-primary text-secondary text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Icon Divider-->
+        <h2 class="masthead-heading text-uppercase mt-3" id="Users Only"><%= __("Users Only") %></h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Heading-->
+        <div class="col">
+            <h1 class="lead" id="Log In Notice"><%= __("The page you are trying to access is only available to logged-in users.") %></h1>
+            <h1 class="lead" id="Log In Instruction"><%= __("Please log in and try again.") %></h1>
+        </div>
+    </div>
+</header>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="/theme/js/scripts.js"></script>
+
+<script>
+    function setLanguage(lang){
+        $.post('/changeLanguage', {lang:lang}, function(status) {
+            // reload the page after setting the language
+            console.log("reloading...");
+            //window.location.reload();
+            window.location.search = '?lang='+lang;
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+Page 1
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Nuestra historia comienza [background].
+
+Page 2
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Quiero planear [evento] de la historia.
+
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: ¿Dónde empiezo? ¡Oh! Primero necesitaré [comida].
+
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: Puedo ayudarte a preparar [comida]. Pero necesitaré [ingrediente] para hacerlos.
+
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Soy un genio para encontrar cosas. Puedo encontrar [ingrediente] en la tienda, pero necesitaré una manera de llegar allí.
+
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: Puedo llevarte a la tienda en [vehículo].
+
+Page 7
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Mientras estás allí, ¿puedes recoger algunos [decoración] y [entretenimiento]? Comenzaremos a prepararnos para el evento.
+
+Page 8
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_smile]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: ¡Que bien! Traeremos todo de vuelta en poco tiempo. 
+
+Page 9
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehículo]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 3] fue con [Character 4] en [vehículo] para recoger todo lo que el grupo necesitaba.
+
+Page 10
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 1]
+CENTER-RIGHT: [Character 2, comida-held]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 2] ayudó a [Character 1] a preparar [comida] y está todo listo.
+
+Page 11
+INT
+LEFT-TOP-LEFT: [decoración]
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: [decoración]
+LEFT-CENTER-LEFT: [Character 1_smile, entretenimiento-held]
+CENTER-LEFT: [Character 2_smile]
+CENTER-RIGHT: [Character 3_smile, comida-held]
+RIGHT-CENTER-RIGHT: [Character 4_smile]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Los amigos pasaron el resto del día [actividad]. Realmente fue [evento] de la historia.
+
+Page 12
+role: Soñador
+
+Page 13
+INT
+role: Cocinero
+
+Page 14
+role: Buscador
+
+Page 15
+role: Conductor

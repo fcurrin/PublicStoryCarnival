@@ -1,0 +1,318 @@
+Page 1
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1]
+CENTER-LEFT: [Character 2]
+CENTER-RIGHT: [Character 3]
+RIGHT-CENTER-RIGHT: [Character 4]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 1] [Character 2] [Character 3] y [Character 4] estaban [actividad] [background] juntos cuando escucharon un ruido extraño. 
+Page 2
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [efecto de sonido]
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: ¿Qué fue ese ruido?
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: Parece que venía de allí. ¿Deberíamos ir a investigar?
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_worried]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Tengo miedo. ¿Y si es un monstruo?
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: 
+CENTER-LEFT: 
+CENTER-RIGHT: 
+RIGHT-CENTER-RIGHT: 
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: Tendremos que hacer todo lo posible para mantenernos a salvo.
+Page 7
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1_looking]
+CENTER-LEFT: [Character 2_looking]
+CENTER-RIGHT: [Character 3_looking]
+RIGHT-CENTER-RIGHT: [Character 4_looking]
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Los amigos salieron a ver qué estaba haciendo el ruido extraño.
+Page 8
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT: [MiniBird]
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 2_looking]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: [Character 2] es un buscador experto y notó un pájaro revoloteando en el cielo.
+Page 9
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:[MiniBird]
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 2_surprised]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 2: ¡Mira! ¡Un pájaro! ¡Hola, pajarito!
+Page 10
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP: [MiniBird]
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+MiniBird: Hola amigos. Mi nombre es Pajarito. He viajado mucho y tengo cansancio y hambre.
+Page 11
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Ven con nosotros Pajarito. Puedo preparar [comida] para ti.
+Page 12
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Sí y puedo construir [mueble] para que puedas descansar.
+Page 13
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP: [MiniBird]
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM:
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+MiniBird: ¡Muchas gracias! He estado volando durante tanto tiempo que me duelen las alas.
+Page 14
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: Puedo echar un vistazo a tus alas. Yo curo heridas y podría ser capaz de ayudar.
+Page 15
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 1, comida-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT:[MiniBird]
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: De regreso [background] [Character 1] preparó [comida] para Pajarito.
+Page 16
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 4, MiniBird-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 4] miró las alas de Pajarito y vendó una para que curarla.
+Page 16
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT: 
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT: [Character 3]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: [mueble], [MiniBird]
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 3] construyó una [mueble] donde Pajarito se durmió profundamente. Los amigos esperaban aprender más sobre Pajarito al día siguiente.
+Page 17
+INT
+role: Cocinero
+Page 18
+INT
+role: Buscador
+Page 19
+INT
+role: Constructor
+Page 20
+INT
+role: Doctor

@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title><%= __("Story Carnival") %></title>
+
+<script src="https://zimjs.org/cdn/1.2.3/createjs_min.js"></script>
+<script src="https://zimjs.org/cdn/10.7.1/zim.js"></script>
+<!-- use zimjs.com/distill for minified individual functions! -->
+<!-- 0. import the pizzazz_02.js file of icons -->
+<script src="https://d309knd7es5f10.cloudfront.net/pizzazz_02.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+<div id="playlist">
+    <audio autoplay></audio>
+</div>
+<input id="hiddenData" type="hidden" value="<%= story_data %>"/>
+<script>
+    var story_data = document.getElementById("hiddenData").value;
+    if (story_data){
+        story_data = JSON.parse(story_data);
+    }
+</script>
+
+<!--TEST: for musicPath in planner.js-->
+<script>
+    const locale = '<%= __("locale") %>';
+</script>
+
+<!--TEST-->
+<script>
+    const pickStory = '<%= __("Pick a story") %>';
+    const next = '<%= __("Next") %>';
+    const exploreANewPlace = '<%= __("Explore a New Place") %>'; // also used in picker.js for template script choosing
+    const planAnEvent = '<%= __("Plan an Event") %>';
+    const whatIsThatNoise = '<%= __("What is That Noise?") %>';
+    const pickSetting = '<%= __("Pick a setting") %>';
+    const pick4Characters = '<%= __("Pick 4 characters") %>';
+    const pickOne = '<%= __("Pick one ") %>';
+</script>
+
+<!--TEST: Post template stories stuff-->
+<script>
+    //TEST: const howManyTitleStr = '<%= __("How many players are there?") %>';
+    const howManyTitleStr = '<%= __("How many players are there?") %>';
+    const whoDoesPlayer = '<%= __("Who does Player ") %>';
+    const wantToBe = '<%= __(" want to be?") %>';
+    const change = '<%= __("Change") %>';
+    const pick = '<%= __("Pick") %>';
+    const done = '<%= __("Done") %>';
+    const saveStory = '<%= __("Do you want to save your story?") %>';
+    const save = '<%= __("Save") %>';
+    const skip = '<%= __("Skip") %>';
+    const home = '<%= __("HOME") %>';
+    const nameYourStory = '<%= __("Name Your Story") %>';
+</script>
+
+<!--TEST: Template script names in picker.js-->
+<script>
+    const exploreTemplateScript = '<%= __("Explore Template Script") %>';
+    const eventTemplateScript = '<%= __("Event Template Script") %>';
+    const noiseTemplateScript = '<%= __("Noise Template Script") %>';
+    //const exploreNewPlace = '<%= __("Explore a New Place") %>';
+</script>
+
+<!--TEST: translating objects-->
+<!-- TEST: changed "A storm" to "storm"-->
+<script>
+    const fishObj = '<%= __("fish") %>';
+    const appleObj = '<%= __("apples") %>';
+    const candyObj = '<%= __("candy") %>';
+    const catchObj = '<%= __("catch") %>';
+    const lookForObj = '<%= __("look for") %>';
+    const spaceshipObj = '<%= __("spaceship") %>';
+    const carObj = '<%= __("car") %>';
+    const boatObj = '<%= __("boat") %>';
+    const engineProblemObj = '<%= __("A problem with the engine") %>';
+    const stormObj = '<%= __("storm") %>';
+    const donutObj = '<%= __("donuts") %>';
+    const hamburgerObj = '<%= __("hamburgers") %>';
+    const sushiObj = '<%= __("sushi") %>';
+    const cupcakeObj = '<%= __("cupcakes") %>';
+    const iceCreamObj = '<%= __("ice cream") %>';
+    const balloonObj = '<%= __("balloons") %>';
+    const basketballObj = '<%= __("basketballs") %>';
+    const partyObj = '<%= __("party") %>';
+    const basketballGameObj = '<%= __("basketball game") %>';
+    const danceObj = '<%= __("dance") %>';
+    const dancingObj = '<%= __("dancing") %>';
+    const playingBallObj = '<%= __("playing ball") %>';
+    const chairObj = '<%= __("chair") %>';
+    const tableObj = '<%= __("table") %>';
+</script>
+
+<!--TEST: changing the names of the backgrounds in picker.js-->
+<script>
+    const theSevenSeasObj = '<%= __("the seven seas") %>';
+    const onAnIslandObj = '<%= __("on an island") %>';
+    const spaceObj = '<%= __("space") %>';
+    const onTheMoonObj = '<%= __("on the moon") %>';
+    const theWoodsObj = '<%= __("the woods") %>';
+    const inTheWoodsObj = '<%= __("in the woods") %>';
+    const outsideTheHouseObj = '<%= __("outside the house") %>';
+    const atTheHouseObj = '<%= __("at the house") %>';        
+</script>
+
+<!--TEST: characters-->
+<script>
+    const catObj = '<%= __("Cat") %>';
+    const catObjVoice = '<%= __("catVoice") %>';
+    const monkeyObj = '<%= __("Monkey") %>';
+    const monkeyObjVoice = '<%= __("monkeyVoice") %>';
+    const bearObj = '<%= __("Bear") %>';
+    const bearObjVoice = '<%= __("bearVoice") %>';
+    const horseObj = '<%= __("Horse") %>';
+    const horseObjVoice = '<%= __("horseVoice") %>';
+    const dogObj = '<%= __("Dog") %>';
+    const dogObjVoice = '<%= __("dogVoice") %>';
+    const miniBirdObj = '<%= __("MiniBird") %>';
+    const minibirdVoice = '<%= __("minibirdVoice") %>';
+</script>
+
+<script>
+    var eventType = '<%= __("event") %>';
+    var mealType = '<%= __("meal") %>';
+    var foodType = '<%= __("food") %>';
+    var vehicleType = '<%= __("vehicle") %>';
+    var decorationType = '<%= __("decoration") %>';
+    var entertainmentType = '<%= __("entertainment") %>';
+    var activityType = '<%= __("activity") %>';
+    var problemType = '<%= __("problem") %>';
+    var methodType = '<%= __("method") %>';
+    var soundeffectType = '<%= __("sound effect") %>';
+    var furnitureType = '<%= __("furniture") %>';
+    var powType = '<%= __("POW") %>';
+</script>
+
+<script src="./scripts/planner.js"></script>
+<script src="./scripts/story.js"></script>
+<script src="./scripts/picker.js"></script>
+
+
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+</head>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="/theme/js/scripts.js"></script>
+
+<body>
+</body>
+</html>

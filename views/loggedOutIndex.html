@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title id="title"><%= __("Story Carnival") %></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href='<%= __("assets/img/SC_logo.png") %>' />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/theme/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="text-white js-scroll-trigger" href="#page-top" id="Development Site"><%= __("Development Site") %></a>
+            <div class="collapse navbar-collapse col-lg-8" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-item mx-0 mx-lg-1 nav-link py-3 px-0 px-lg-3 rounded " href="/research" id="research"><%= __("Research") %></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-outline-light" href="/login" ondblclick="console.log('Double clicked'); return false;">
+                        <%= __("Log In") %>
+                    </a></li>
+                    <li class="nav-item dropdown mx-0 mx-lg-1">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownUser1" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fas fa-globe-americas"></i>
+                        </a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item rounded" onclick="setLanguage('en')">English</a></li>
+                        <li><a class="dropdown-item rounded" onclick="setLanguage('es')">Español</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <div class="col-8 col-md-10">
+                <img class="masthead-avatar mb-5 img-fluid" src='<%= __("assets/img/SC_logo.png") %>' alt="" />
+            </div>
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase text-secondary mb-0" id="home-title-h1"><%= __("This is our development site.") %></h1>
+            <br/>
+	    <h1 class="lead text-secondary" style="text-align: left; padding: 10px"><%= __("We use this site to test out new features. If you're looking for the main Story Carnival site, head over here: ") %><a href="http://storycarnival.org">http://storycarnival.org</a></h1>
+    </header>
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+    
+    <script>
+        function setLanguage(lang){
+            $.post('/changeLanguage', {lang:lang}, function(status) {
+                // reload the page after setting the language
+                console.log(status);
+                //window.location.reload();
+                window.location.search = '?lang='+lang;
+            });
+        }
+    </script>
+
+</body>
+</html>

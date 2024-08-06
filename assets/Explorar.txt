@@ -1,0 +1,210 @@
+Page 1
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehículo]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Nuestra historia comienza con cuatro amigos explorando [setting] en [vehículo].
+Page 2
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehículo]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: [problema]
+Narrator: [problema] hizo que [vehículo] se estrellara [background].
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER:
+Character 1: Ahora que estamos atrapados [background], ¿qué debemos hacer?
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER:
+Character 2: Puedo construir un refugio para tener un lugar seguro donde quedarnos.
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: Puedo [método] [ingrediente]. Luego puedo preparar la cena.
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: Comenzaré a arreglar [vehículo] para que podamos volver a casa, pero necesitaré algunos repuestos nuevos para poder terminar.
+Page 7
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_smile]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: ¡Perfecto! Puedo buscar esos repuestos que faltan. Volvamos a encontrarnos a la hora de la cena.
+Page 8
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [shelter]
+CENTER-LEFT:
+CENTER-RIGHT: [Character 2]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT: 
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: A la hora de la cena,  [Character 2] había construido el refugio, pero tenía planes de mejorarlo aún más al día siguiente. 
+Page 9
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 3, ingrediente-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 3] había preparado una deliciosa cena con [ingrediente]. 
+Page 10
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 4]
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT: [Character 1]
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: [vehículo]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 4] había avanzado bastante en arreglar [vehículo] usando los repuestos que encontró [Character 1] . 
+Page 11
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1_sleep]
+CENTER-LEFT: [Character 2_sleep]
+CENTER-RIGHT: [Character 3_sleep]
+RIGHT-CENTER-RIGHT: [Character 4_sleep]
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT: 
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: Los amigos se acostaron después de la cena, soñando con lo que harían al día siguiente.
+Page 12
+INT
+role: Buscador
+Page 13
+INT
+role: Constructor
+Page 14
+INT
+role: Cocinero
+Page 15
+INT
+role: Mecánico

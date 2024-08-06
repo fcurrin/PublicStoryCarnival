@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title id="Story Carnival"><%= __("Story Carnival") %></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href='<%= __("assets/img/SC_logo.png") %>' />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/theme/css/styles.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>\
+
+        <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script>
+        <script src="https://zimjs.org/cdn/cat/00/zim.js"></script>
+        <!-- use zimjs.com/distill for minified individual functions! -->
+        <!-- 0. import the pizzazz_02.js file of icons -->
+        <script src="https://d309knd7es5f10.cloudfront.net/pizzazz_02.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <div id="playlist">
+            <audio autoplay></audio>
+        </div>
+
+        <!--TEST: for musicPath in tutorialFormat.js-->
+        <script>
+          const locale = '<%= __("locale") %>';
+          const startTutorial = '<%= __("Press to Start Tutorial") %>';
+        </script>  
+
+        <script src="/scripts/tutorialFormat.js"></script>
+
+    </head>
+    <body id="page-top" onload="playStory();">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container col-12"><a class="navbar-brand js-scroll-trigger" href="#page-top" id="home-title"><%= __("Story Carnival") %></a> 
+          <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-next-section text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <%= __("Menu") %>
+              <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse col-lg-8" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link btn btn-outline-light py-3 px-0 px-lg-3" href="/" id="Home">
+                <%= __("Home") %>
+              </a></li>
+              <li class="nav-item dropdown mx-0 mx-lg-1">
+                <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownUser1" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <i class="fas fa-globe-americas"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownUser1">
+                  <li><a class="dropdown-item rounded" onclick="setLanguage('en')">English</a></li>
+                  <li><a class="dropdown-item rounded" onclick="setLanguage('es')">Español</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+
+    </nav>
+    <header class="masthead bg-primary text-secondary text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h2 class="masthead-heading text-uppercase mb-0">Tutorial</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="canvas-container" id="canvasWrapper">
+            </div>
+            <br/><br/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qpGReuJDQbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/><br/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VFIQm_CSAgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/><br/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/sMXeX3mHKaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/><br/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A8aQjaEjLqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/><br/>
+            <div id="playPlannerButtonDIV">
+              <a class="btn btn-xl btn-outline-dark" id="playPlannerButton" href="<%= __('Play Planner File') %>" target="_blank"><%= __("Print Play Planner") %></a>
+              <p></p>
+            </div>
+            <div id="requestButtonDIV">
+              <a class="btn btn-xl btn-outline-dark" id="requestButton" href="<%= __('Request form link') %>" target="_blank"><%= __("Request a MiniBird Toy") %></a>
+              <p></p>
+            </div>
+            <br></br>
+            <h2 class="masthead-heading text-uppercase mb-0" id="assembly instructions"><%= __("MiniBird Assembly Instructions") %></h2>
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p id="assembly intro"><%= __("The MiniBird Toy is an optional component of StoryCarnival.") %></p>
+            <p style="text-align:left" id="To make a MiniBird Toy, you will need:"><b><%= __("To make a MiniBird Toy, you will need:") %></b></p>
+            <ol style="text-align:left">
+                <li id="assembly need 1"><%= __("The MiniBird design documents provided on this website") %></li>
+                <li id="assembly need 2"><%= __("A Bluetooth speaker (We use the ") %><a href="https://www.amazon.com/TYLT-Bluetooth-Playback-Portable-Microphone/dp/B074FGPJVS/">TYLT Mini Boom Bluetooth Speaker</a><%= __(" which measures 1.7 in. by 1.3 in. by 1.5 in. If you opt to use a different speaker, you may need to adjust the dimensions of the design.") %>).</li>
+                <li id="assembly need 3"><%= __("Paper and a color printer") %></li>
+                <li id="assembly need 4"><%= __("0.05 inch-thick cardboard") %></li>
+                <li id="assembly need 5"><%= __("An X-acto knife and/or scissors") %></li>
+                <li id="assembly need 6"><%= __("Glue") %></li>
+            </ol>
+            <p style="text-align:left"><b><%= __("Assembly steps:") %></b></p>
+            <ol style="text-align:left">
+                <li><%= __("Print out the MiniBird Cutting Guide (download by clicking the button below). To fit the TYLT speaker, the printed design should measure 6.77in x 5.6in.") %></li>
+                <li><%= __("Align the cutting guide with the cardboard and cut along the black lines.") %></li>
+                <li><%= __("Print the MiniBird Decoration file (download by clicking the button below). Cut out the decoration and glue it to the outside of the case. Alternatively, you could decorate the case however you would like.") %></li>
+                <li><%= __("When the glue has dried, fold the cardboard along the creases indicated by the red lines in the MiniBird Cutting Guide. Glue to hold in place, but leave the top open.") %></li>
+                <li><%= __("When the glue has dried, insert the Bluetooth speaker into the holder and fold in the flaps at the top.") %></li>
+                <li><%= __("To play with MiniBird, connect your device to the Bluetooth speaker and control MiniBird’s speech using the Voice Agent Control section of this website.") %></li>
+            </ol>
+            <br/>
+            <a class="btn btn-xl btn-outline-dark" href="/public/minibird_cutting_guide.png" id="minibird-download" download><%= __("Guide") %></a>
+            <br/>
+            <a class="btn btn-xl btn-outline-dark" href="/public/minibird_decoration.png" id="decoration-download" download><%= __("Decoration") %></a>
+        </div>
+
+        <div class="modal fade" id="surveyModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header2 d-block" style="padding:35px 50px;background-color: #1abc9c; color:white !important;  text-align: center;font-size: 50px">
+                <button class="close float-right" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h5 class="modal-title text-center text-uppercase"><%= __("Survey") %></h5>
+              </div>
+              <div class="modal-body w-100 center" style="padding:40px 50px; text-align: center;font-size: 50px">
+                <div class="row">
+                  <div class="col"><span>
+                      <iframe id="surveyFrame" src="" height="800px" width="500px"></iframe></span></div>
+                </div>
+              </div>
+              <div class="modal-footer2" style="padding:10px ;background-color: #1abc9c; color:white !important;  text-align: center;font-size: 50px">
+                <button class="btn btn-primary btn-xl pull-left" type="submit" style="background-color: white;color:#1abc9c" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span><%= __("Close") %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+      <!-- Bootstrap core JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="/theme/js/scripts.js"></script>
+      <!-- -->
+    <input id="hiddenUser" type="hidden" value="<%= user %>"/>
+    <input id="hiddenRole" type="hidden" value="<%= role %>"/>
+    <input id="hiddenSurveyID" type="hidden" value="<%= surveyID %>"/>
+    <input id="hiddenString" type="hidden" value="<%= string %>"/>
+
+
+    <script language="javascript" type="text/javascript">
+		  $(window).on('load',function(){
+        var uid = document.getElementById("hiddenUser").value;
+        var role = document.getElementById("hiddenRole").value;
+        var surveyID = document.getElementById("hiddenSurveyID").value;
+	var agent = document.getElementById("hiddenString").value;
+        var survey = document.getElementById("surveyFrame");
+        var requestBtn = document.getElementById("requestButtonDIV");
+        var btnLink = document.getElementById("requestButton");
+
+        if(role == "Parent"){
+          requestBtn.style.display = 'none';
+          if(surveyID){
+            survey.src = 'https://uiowa.qualtrics.com/jfe/form/'+surveyID+'?UID='+uid;
+            $('#surveyModal').modal('show');
+          }
+        }
+        else{
+          btnLink.href = btnLink.href + '?val=' + agent;
+	  console.log(btnLink.href);
+          requestBtn.style.display = 'block';
+        }
+      });
+
+    </script>
+    
+    
+    <script>
+        function setLanguage(lang){
+            $.post('/changeLanguage', {lang:lang}, function(status) {
+                // reload the page after setting the language
+                console.log("reloading...");
+                //window.location.reload();
+                window.location.search = '?lang='+lang;
+        });
+        }
+    </script>
+
+    </body>
+</html>

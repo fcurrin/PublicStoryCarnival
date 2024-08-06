@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title id="Research"><%= __("Research") %></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href='<%= __("assets/img/SC_logo.png") %>' />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/theme/css/styles.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container col-12"><a class="navbar-brand js-scroll-trigger" href="/" id="home-title"><%= __("Story Carnival") %></a> 
+          <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-next-section text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <%= __("Menu") %>
+                <i class="fas fa-bars"></i>
+            </button>
+          <div class="collapse navbar-collapse col-lg-8" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown mx-0 mx-lg-1">
+                  <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownStandards" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <%= __("Standards") %>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownStandards">
+                      <li><a class="dropdown-item rounded" href="#Standards"><%= __("Head Start") %></a></li>
+                      <li><a class="dropdown-item rounded" href="#standardDivider"><%= __("NAEYC") %></a></li>
+                  </ul>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Foundations" id="home-make-stories"><%= __("Foundations") %></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Publications" id="home-voice-agent"><%= __("Publications") %></a></li>
+                  <li class="nav-item mx-0 mx-lg-1">
+                      <a class="btn btn-outline-light" href="/login" ondblclick="console.log('Double clicked'); return false;">
+                          <%= __("Log In") %>
+                      </a>
+                  </li>
+                  <li class="nav-item dropdown mx-0 mx-lg-1">
+                      <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownUser1" data-toggle="dropdown" role="button" aria-expanded="false">
+                          <i class="fas fa-globe-americas"></i>
+                      </a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownUser1">
+                      <li><a class="dropdown-item rounded" onclick="setLanguage('en')">English</a></li>
+                      <li><a class="dropdown-item rounded" onclick="setLanguage('es')">Español</a></li>
+                  </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+    <!-- <header class="masthead bg-primary text-secondary text-center"> -->
+      <section class="page-section mb-0 bg-primary" id="Standards">
+        <div class="container d-flex flex-column">
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Heading-->
+            <h2 class="page-section-heading text-uppercase text-secondary text-center mb-0"><%= __("Standards") %></h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p><%= __("The StoryCarnival approach is designed to support evidence-based social play activities. Below, we outline specific national standards and concepts targeted by StoryCarnival activities.") %></p>
+            <br/><br/>
+            <!-- Head Start Preschooler Domains -->
+            <h3 id="standard1Title" class="masthead-heading text-left"><a href="https://eclkc.ohs.acf.hhs.gov/interactive-head-start-early-learning-outcomes-framework-ages-birth-five" target="_blank"><%= __("Head Start Preschooler Domains") %></a></h3>
+            <!-- Approaches to Learning -->
+            <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Approaches to Learning Goals") %></h4>
+            <div id="accordion-hs-approaches">
+                <div class="card">
+                  <div class="card-header" id="heading-hs-approaches-a">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-approaches-a" aria-expanded="false" aria-controls="collapse-hs-approaches-a">
+                        <%= __("Emotional And Behavioral Self-Regulation") %>
+                      </button>
+                    </h5>
+                  </div>             
+                  <div id="collapse-hs-approaches-a" class="collapse" aria-labelledby="heading-hs-approaches-a" data-parent="#accordion-hs-approaches">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children manage emotions with increasing independence") %></p>
+                        <p class="text-left"><%= __("Children appropriately handle and take care of classroom materials") %></p>
+                        <p class="text-left"><%= __("Children manage actions, words, and behavior with increasing independence") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-approaches-b">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-approaches-b" aria-expanded="false" aria-controls="collapse-hs-approaches-b">
+                        <%= __("Cognitive Self-Regulation (Executive Functioning)") %>
+                      </button>
+                    </h5>
+                  </div>              
+                  <div id="collapse-hs-approaches-b" class="collapse" aria-labelledby="heading-hs-approaches-b" data-parent="#accordion-hs-approaches">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children maintain focus and sustain attention with minimal adult support") %></p>
+                        <p class="text-left"><%= __("Children persist in tasks") %></p>
+                        <p class="text-left"><%= __("Children hold information in their minds and manipulate it to perform tasks") %></p>
+                        <p class="text-left"><%= __("Children demonstrate flexibility in thinking and behavior") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-approaches-c">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-hs-approaches-c" aria-expanded="false" aria-controls="collapse-hs-approaches-c">
+                        <%= __("Initiative and Curiosity") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-approaches-c" class="collapse" aria-labelledby="heading-hs-approaches-c" data-parent="#accordion-hs-approaches">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children demonstrate initiative and independence") %></p>
+                        <p class="text-left"><%= __("Children show interest in and curiosity about the world around them") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-approaches-d">
+                    <h5 class="mb-0">
+                      <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-hs-approaches-d" aria-expanded="false" aria-controls="collapse-hs-approaches-d">
+                        <%= __("Creativity") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-approaches-d" class="collapse" aria-labelledby="heading-hs-approaches-d" data-parent="#accordion-hs-approaches">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children express creativity in thinking and communication") %></p>
+                        <p class="text-left"><%= __("Children use imagination in play and interactions with others") %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <br/><br/>
+            <!-- Social and Emotional Development -->
+            <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Social and Emotional Development Goals") %></h4>
+            <div id="accordion-hs-social-emotional">
+                <div class="card">
+                  <div class="card-header" id="heading-hs-social-emotional-b">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-social-emotional-b" aria-expanded="false" aria-controls="collapse-hs-social-emotional-1b">
+                        <%= __("Relationships with Other Children") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-social-emotional-b" class="collapse" aria-labelledby="heading-hs-social-emotional-b" data-parent="#accordion-hs-social-emotional">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children engage in and maintain positive interactions and relationships with other children") %></p>
+                        <p class="text-left"><%= __("Children engage in cooperative play with other children") %></p>
+                        <p class="text-left"><%= __("Children use basic problem-solving skills to resolve conflicts with other children") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-social-emotional-c">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-social-emotional-c" aria-expanded="false" aria-controls="collapse-hs-social-emotional-c">
+                        <%= __("Emotional Functioning") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-social-emotional-c" class="collapse" aria-labelledby="heading-hs-social-emotional-c" data-parent="#accordion-hs-social-emotional">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children express a broad range of emotions and recognize these emotions in self and others") %></p>
+                        <p class="text-left"><%= __("Children express care and concern toward others") %></p>
+                        <p class="text-left"><%= __("Children manage emotions with increasing independence") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-social-emotional-d">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-social-emotional-d" aria-expanded="false" aria-controls="collapse-hs-social-emotional-d">
+                        <%= __("Sense of Identity and Belonging") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-social-emotional-d" class="collapse" aria-labelledby="heading-hs-social-emotional-d" data-parent="#accordion-hs-social-emotional">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children recognize self as a unique individual having own abilities, characteristics, emotions, and interests") %></p>
+                        <p class="text-left"><%= __("Children express confidence in own skills and positive feelings about self") %></p>
+                        <p class="text-left"><%= __("Children have sense of belonging to family, community, and other groups") %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <br/><br/>
+            <!-- Language and Communication -->
+            <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Language and Communication Goals") %></h4>
+            <div id="accordion-hs-language-communication">
+                <div class="card">
+                  <div class="card-header" id="heading-hs-language-communication-a">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-language-communication-a" aria-expanded="false" aria-controls="collapse-hs-language-communication-a">
+                        <%= __("Attending and Understanding") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-language-communication-a" class="collapse" aria-labelledby="heading-hs-language-communication-a" data-parent="#accordion-hs-language-communication">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children attend to communication and language from others") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-language-communication-b">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-language-communication-b" aria-expanded="false" aria-controls="collapse-hs-language-communication-b">
+                        <%= __("Communicating and Speaking") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-language-communication-b" class="collapse" aria-labelledby="heading-hs-language-communication-b" data-parent="#accordion-hs-language-communication">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children understand, follow, and use appropriate social and conversational rules") %></p>
+                        <p class="text-left"><%= __("Children express self in increasingly long, detailed, and sophisticated ways") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-hs-language-communication-c">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-language-communication-c" aria-expanded="false" aria-controls="collapse-hs-language-communication-c">
+                        <%= __("Vocabulary") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-language-communication-c" class="collapse" aria-labelledby="heading-hs-language-communication-c" data-parent="#accordion-hs-language-communication">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children understand and use a wide variety of words for a variety of purposes") %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br/><br/>
+              <!-- Literacy -->
+              <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Literacy Goals") %></h4>
+              <div id="accordion-hs-literacy">
+                <div class="card">
+                  <div class="card-header" id="heading-hs-literacy-c">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-hs-literacy-c" aria-expanded="false" aria-controls="collapse-hs-literacy-c">
+                        <%= __("Comprehension and Text Structure") %>
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse-hs-literacy-c" class="collapse" aria-labelledby="heading-hs-literacy-c" data-parent="#accordion-hs-literacy">
+                    <div class="card-body">
+                        <p class="text-left"><%= __("Children demonstrate an understanding of narrative structure through storytelling/re-telling") %></p>
+                        <p class="text-left"><%= __("Children ask and answer questions about a book that was read aloud") %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br/><br/>
+
+              <div class="divider-custom divider" id="standardDivider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+              </div>
+
+              <br/><br/>
+            <!-- NAEYC Accreditation  -->
+            <h3 id="standard2Title" class="masthead-heading text-left"><a href="https://www.naeyc.org/sites/default/files/globally-shared/downloads/PDFs/accreditation/early-learning/standards_assessment_2019.pdf" target="_blank"><%= __("National Association for the Education of Young Children Accreditation") %></a></h3>
+            <!-- Relationships -->
+            <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Relationships") %></h4>
+            <div id="accordion-naeyc-relationships">
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-relationships-c">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-relationships-c" aria-expanded="false" aria-controls="collapse-naeyc-relationships-c">
+                      <%= __("Helping Children Make Friends") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-relationships-c" class="collapse" aria-labelledby="heading-naeyc-relationships-c" data-parent="#accordion-naeyc-relationships">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Teachers give children a chance to resolve their own conflicts without immediate teacher intervention") %></p>
+                    <p class="text-left"><%= __("When children are in conflict, teachers help them: identify their feelings, identify and describe the problem, and think of alternative solutions") %></p>
+                    <p class="text-left"><%= __("Show or describe two examples of how you help make children's play more complex") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-relationships-d">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-relationships-d" aria-expanded="false" aria-controls="collapse-naeyc-relationships-d">
+                      <%= __("Creating a Predictable, Consistent, and Harminous Classroom") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-relationships-d" class="collapse" aria-labelledby="heading-naeyc-relationships-d" data-parent="#accordion-naeyc-relationships">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Teachers offer children the chance to choose activities, materials, and areas in which to play") %></p>
+                    <p class="text-left"><%= __("Teachers use narration and description of ongoing interactions to identify prosocial behaviors") %></p>
+                    <p class="text-left"><%= __("Show or describe one example of how children have opportunities to participate in decision making about class plans") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-relationships-f">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-relationships-f" aria-expanded="false" aria-controls="collapse-naeyc-relationships-f">
+                      <%= __("Promoting Self-Regulation") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-relationships-f" class="collapse" aria-labelledby="heading-naeyc-relationships-f" data-parent="#accordion-naeyc-relationships">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Teachers help children learn emotional regulation skills") %></p>
+                    <p class="text-left"><%= __("Teachers guide and support children to use language to communicate needs") %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/><br/>
+            <!-- Curriculum -->
+            <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Curriculum") %></h4>
+            <div id="accordion-naeyc-curriculum">
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-a">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-a" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-a">
+                      <%= __("Essential Characteristics") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-a" class="collapse" aria-labelledby="heading-naeyc-curriculum-a" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Show or describe two examples of how you change classroom materials or equipment as children’s skill levels change over time") %></p>
+                    <p class="text-left"><%= __("Show or describe one example of how your program has changed classroom materials or equipment to accommodate the individual needs of a child") %></p>
+                    <p class="text-left"><%= __("Show or describe two examples of play experiences you have planned which are related to learning themes in the curriculum") %></p>
+                    <p class="text-left"><%= __("Show one example of how your written curriculum or curriculum framework can be modified to reflect the languages spoken by families in the program") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-b">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-b" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-b">
+                      <%= __("Social and Emotional Development") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-b" class="collapse" aria-labelledby="heading-naeyc-curriculum-b" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Children have chances to recognize and name other people’s feelings") %></p>
+                    <p class="text-left"><%= __("Children have chances to learn how to resolve conflicts in constructive ways") %></p>
+                    <p class="text-left"><%= __("Children have chances to understand that other people may have different thoughts and opinions than theirs") %></p>
+                    <p class="text-left"><%= __("Children have chances to learn that other people may have different feelings than they do") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-d">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-d" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-d">
+                      <%= __("Lanugage Development") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-d" class="collapse" aria-labelledby="heading-naeyc-curriculum-d" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Children have discussions with each other or with staff to solve problems related to the physical world") %></p>
+                    <p class="text-left"><%= __("Teachers use words that children may not understand and provide explanations or examples of these words") %></p>
+                    <p class="text-left"><%= __("Show or describe two examples of how you teach children to have discussions with each other to resolve interpersonal problems") %></p>
+                    <p class="text-left"><%= __("Show or describe two examples of how you teach children to have discussions with each other to solve problems related to the physical world") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-e">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-e" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-e">
+                      <%= __("Early Literacy") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-e" class="collapse" aria-labelledby="heading-naeyc-curriculum-e" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Teachers help children connect print to spoken word; show or describe two examples") %></p>
+                    <p class="text-left"><%= __("Some of the books available to children relate to current learning topics, themes, or activities") %></p>
+                    <p class="text-left"><%= __("Show or describe how children have chances to retell or reenact events in storybooks") %></p>
+                    <p class="text-left"><%= __("Show two examples of lesson plans that link books to current learning topics, themes, or activities") %></p>
+                    <p class="text-left"><%= __("Show one example of a lesson plan in which you play a game that encourages kindergartners and school-agers to identify phonemes in words") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-h">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-h" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-h">
+                      <%= __("Technology") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-h" class="collapse" aria-labelledby="heading-naeyc-curriculum-h" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Show two lesson plans in which you use technology to enrich your curriculum") %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading-naeyc-curriculum-j">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-curriculum-j" aria-expanded="false" aria-controls="collapse-naeyc-curriculum-j">
+                      <%= __("Creative Expression and Appreciation for the Arts") %>
+                    </button>
+                  </h5>
+                </div>             
+                <div id="collapse-naeyc-curriculum-j" class="collapse" aria-labelledby="heading-naeyc-curriculum-j" data-parent="#accordion-naeyc-curriculum">
+                  <div class="card-body">
+                    <p class="text-left"><%= __("Provide two examples showing or describing how you teach vocabulary and/or concepts related to drama") %></p>
+                  </div>
+                </div>
+              </div>
+              <br/><br/>
+              <!-- Teaching -->
+              <h4 class="masthead-subheading text-left text-secondary" text-align="left"><%= __("Teaching") %></h4>
+              <div id="accordion-naeyc-teaching">
+                <div class="card">
+                  <div class="card-header" id="heading-naeyc-teaching-b">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-teaching-b" aria-expanded="false" aria-controls="collapse-naeyc-teaching-b">
+                        <%= __("Creating Caring Communities for Learning") %>
+                      </button>
+                    </h5>
+                  </div>             
+                  <div id="collapse-naeyc-teaching-b" class="collapse" aria-labelledby="heading-naeyc-teaching-b" data-parent="#accordion-naeyc-teaching">
+                    <div class="card-body">
+                      <p class="text-left"><%= __("Show or describe two activities or lesson plans that encourage children to share their ideas or experiences") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-naeyc-teaching-d">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-teaching-d" aria-expanded="false" aria-controls="collapse-naeyc-teaching-d">
+                        <%= __("Using Time, Grouping, and Routines to Achieve Learning Goals") %>
+                      </button>
+                    </h5>
+                  </div>             
+                  <div id="collapse-naeyc-teaching-d" class="collapse" aria-labelledby="heading-naeyc-teaching-d" data-parent="#accordion-naeyc-teaching">
+                    <div class="card-body">
+                      <p class="text-left"><%= __("Show two lesson plans that provide children with opportunities to engage in group projects") %></p>
+                      <p class="text-left"><%= __("Show two lesson plans that provide children with opportunities to learn from one another") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-naeyc-teaching-e">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-teaching-e" aria-expanded="false" aria-controls="collapse-naeyc-teaching-e">
+                        <%= __("Responding to Children's Interests and Needs") %>
+                      </button>
+                    </h5>
+                  </div>             
+                  <div id="collapse-naeyc-teaching-e" class="collapse" aria-labelledby="heading-naeyc-teaching-e" data-parent="#accordion-naeyc-teaching">
+                    <div class="card-body">
+                      <p class="text-left"><%= __("Teachers rearrange the classroom, when necessary, to help children explore new concepts or topics and so children can continue doing an activity") %></p>
+                      <p class="text-left"><%= __("Teachers adapt their teaching strategies to best fit each child’s learning style; show or describe one example") %></p>
+                      <p class="text-left"><%= __("Teachers modify classroom materials, when necessary, to fit each child’s learning style; show or describe one example") %></p>
+                      <p class="text-left"><%= __("Teachers sometimes customize learning experiences, based on their knowledge of the children’s social relationships") %></p>                     
+                      <p class="text-left"><%= __("Show or describe one example of how you intentionally rearranged classroom equipment, when necessary, to scaffold children’s learning") %></p>
+                      <p class="text-left"><%= __("Show or describe one example of how you changed a lesson plan if children showed interest in a different topic or activity") %></p>
+                      <p class="text-left"><%= __("Show or describe one example of how you have customized a learning experience based on your knowledge of a child’s ideas, interests, and skills") %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading-naeyc-teaching-g">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapse-naeyc-teaching-g" aria-expanded="false" aria-controls="collapse-naeyc-teaching-g">
+                        <%= __("Using Instruction to Deepen Children's Understanding and Build Their Skills and Knowledge") %>
+                      </button>
+                    </h5>
+                  </div>             
+                  <div id="collapse-naeyc-teaching-g" class="collapse" aria-labelledby="heading-naeyc-teaching-g" data-parent="#accordion-naeyc-teaching">
+                    <div class="card-body">
+                      <p class="text-left"><%= __("As a child refines skills or gains a new skill, teachers fine-tune their teaching support to advance that child’s further learning (scaffolding)") %></p>
+                      <p class="text-left"><%= __("As a child refines skills or gains a new skill, teachers advance that child’s further learning by making the activity a little more difficult (scaffolding); show or describe one example") %></p>
+                      <p class="text-left"><%= __("Teachers use their knowledge of curriculum content to pose problems and ask questions that stimulate the children to think") %></p>
+                      <p class="text-left"><%= __("Teachers help children express their ideas about curriculum content and build on the meaning of their experiences") %></p>
+                      <p class="text-left"><%= __("Teachers help children identify and use what they already know (prior knowledge)") %></p>
+                      <p class="text-left"><%= __("Teachers provide learning experiences that extend and challenge children’s current understanding of the world; show one lesson plan") %></p>
+                      <p class="text-left"><%= __("Show or describe two examples of how you engage in collaborative inquiry with individual children and/or with small groups of children") %></p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        </section>
+        <section class="page-section mb-0 bg-next-section" id="Foundations">
+        <div class="container d-flex flex-column">
+            <div class="divider-custom divider-light mt-0">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white mb-0"><%= __("Foundations of StoryCarnival") %></h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p class="text-white"><%= __("We want StoryCarnival to be a tool which can be used in combination with a range of approaches, not a replacement. StoryCarnival aims to support children's socioemotional development by drawing on and aiming to be compatible with several existing approaches. We detail some of these approaches below.") %></p>
+            <h3 id="foundation1Title" class="text-left text"><a class="text-white" href="https://toolsofthemind.org/learn/what-is-tools/" target="_blank"><%= __("Tools of the Mind") %></a></h3>
+            <p class="text-white"><%= __("The Tools of the Mind approach focuses on developing executive function skills through make-believe play. It encourages children to plan their play, play symbolically, and collaborate with their peers in play. While the Tools of the Mind approach has a specific curriculum and structure, our goal with StoryCarnival is to provide a tool that makes it easier to set up this general style of play. The stories provide a starting point from which children can base their play. Initially, children may replay exactly what happened in a story. Later, they may play out alternate scenarios or what might have happened after the end of the story. The play planner tool reminds children of what each character did in the story and the voice agent provides suggestions for directions play could take, helps integrate children, and provides an alternative form of communication for adults. These supports can be phased out as children develop the skills to lead make-believe play more independently.") %></p>
+            <h3 id="foundation2Title" class="text-left text text-white"><%= __("Play in Social Skills Development") %></h3>
+            <p class="text-white"><%= __("Other approaches to children’s social-emotional development also incorporate stories and play. We are currently working with educators and practitioners to develop stories that can broadly support the work and lessons they already do to help children develop and practice social skills.") %></p>
+        </div>
+        </section>
+        <section class="page-section mb-0 bg-primary" id="Publications">
+        <div class="container d-flex align-items-center flex-column">
+            <div class="divider-custom divider mt-0">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Heading-->
+            <!-- Icon Divider-->
+            <h2 class="page-section-heading text-center text-secondary text-uppercase mb-0"><%= __("Publications") %></h2>
+            
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h3 id="pub1Title" class="masthead-heading text-center"><a href="../public/research/Supporting Shy Preschool Children in Joining Social Play.pdf" target="_blank"><%= __("Supporting Shy Preschool Children in Joining Social Play") %></a></h3>
+            <p id="pub1Descript"><%= __("In a preschool setting with twelve 4-5-year-olds and five 3-year-olds, a research team compared children's sociodramatic play with and without StoryCarnival. They found that three shy children spoke more during StoryCarnival sessions than other Tools of the Mind-style play sessions. Shy children's speech was mostly directed at other children during StoryCarnival sessions. Shy children spontaneously took on a role as a caregiver or mediator for the voice agent and used it as a way to enter play. They would repeat what the voice agent said to other children and then follow up on those ideas. Interested in reading more but short on time? See this ") %><a href="../public/research/Supporting Sociodramatic Play at the Individual Level.pdf" target="_blank"><%= __("short paper focused on one of these shy children's interactions") %></a>.</p>
+            <h3 id="pub3Title" class="masthead-heading text-center"><a href="../public/research/Play-Based Design.pdf" target="_blank"><%= __("Play-Based Design: Giving 3- to 4-Year-Old Children a Voice in the Design Process") %></a></h3>
+            <p id="pub3Descript"><%= __("In a preschool setting with seven 4-year-olds and six three-year-olds, a research team used StoryCarnival as an approach to elicit creative ideas from children about smart home technologies. The research team introduced the concept of smart home technologies as \"magic objects\" and used play sessions to observe what types of \"magic objects\" children wanted (for example, a way to control temperature and light during play). This served as a proof of concept for using a StoryCarnival approach to gauge children's understanding of and ideas about specific concepts.") %></p>
+            <h3 id="pub4Title" class="masthead-heading text-center"><a href="../public/research/Voice Agents Supporting High-Quality Social Play.pdf" target="_blank"><%= __("Voice Agents Supporting High-Quality Social Play") %></a></h3>
+            <p id="pub4Descript"><%= __("Over 24 sessions at a preschool with eight 3-4-year-old children, a research team explored different versions of using voice agents to support children's make-believe play. Key findings included that it was important for the agent to be a portable toy children could pick up and incorporate in their play, adult control of the voice agent's speech allowed them to incorporate important context, using a tablet app to allow children to control the agent's speech could distract children from play, and children generally did not like speaking on behalf of the \"turned off\" agent. Interested in reading more but short on time? See this ") %><a href="../public/research/Explorations of Voice User Interfaces for 3 to 4 Year Old Children.pdf" target="_blank"><%= __("short paper summarizing some of the key findings") %></a>.</p>
+            <h3 id="pub6Title" class="masthead-heading text-center"><a href="https://doi.org/10.1016/j.ijcci.2018.01.002" target="_blank"><%= __("Samba schools as an inspiration for technologies for children under the age of five") %></a></h3>
+            <p id="pub6Descript"><%= __("This paper describes the approach to developing and iterating on early versions of StoryCarnival, inspired by Seymour Papert's view of constructionism. The research team sought to treat the design process itself as a constructionist learning process.") %></p>
+            <h3 id="pub8Title" class="masthead-heading text-center"><a href="../public/research/The 3Cs.pdf" target="_blank"><%= __("The 3Cs for preschool children's technology: create, connect, communicate") %></a></h3>
+            <p id="pub8Descript"><%= __("This forum describes the difference between most technologies available to children and those designed to encourage children to create, connect with the physical environment, and communicate with other people. StoryCarnival was designed to support this \"3Cs\" approach.") %></p>
+            <h3 id="pub9Title" class="masthead-heading text-center"><a href="../public/research/Look, My Baby Is Using an iPad!.pdf" target="_blank"><%= __("Look, My Baby Is Using an iPad! An Analysis of YouTube Videos of Infants and Toddlers Using Tablets") %></a></h3>
+            <p id="pub9Descript"><%= __("In this paper, a research team analyzed YouTube videos of children under the age of 30 months to understand how touchscreen tablet devices lowered the barriers to young children's use of technology. This line of research served as the motivation to study how technology could be used to support young children's development rather than hinder it.") %></p>
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+        </div>
+      </section>
+      <!-- </header> -->
+      <!-- Bootstrap core JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="/theme/js/scripts.js"></script>
+      <!-- -->
+    
+    <script>
+        function setLanguage(lang){
+            $.post('/changeLanguage', {lang:lang}, function(status) {
+                // reload the page after setting the language
+                console.log("reloading...");
+                //window.location.reload();
+                window.location.search = '?lang='+lang;
+        });
+        }
+    </script>
+
+    </body>
+</html>

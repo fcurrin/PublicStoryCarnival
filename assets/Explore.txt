@@ -1,0 +1,210 @@
+Page 1
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehicle]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: Our story begins with four friends exploring [setting] with their [vehicle].
+Page 2
+EXT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [vehicle]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: [problem]
+Narrator: A [problem] caused their [vehicle] to crash [background].
+Page 3
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_confused]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER:
+Character 1: Now that we are stuck [background], what should we do?
+Page 4
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 2_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER:
+Character 2: I can build a shelter so we have a safe place to stay.
+Page 5
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 3_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 3: I can [method] [food]. Then I can make dinner.
+Page 6
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 4_surprised]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 4: I will start to fix the [vehicle] so that we can get back home, but I will need some new parts to finish it.
+Page 7
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT:
+BOTTOM-LEFT:
+BOTTOM: [Character 1_smile]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Character 1: Perfect! I can look for those missing parts. Let’s meet again at dinner time.
+Page 8
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [shelter]
+CENTER-LEFT:
+CENTER-RIGHT: [Character 2]
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: 
+BOTTOM-RIGHT: 
+RIGHT-BOTTOM-RIGHT:
+CENTER: 
+Narrator: By dinner time, [Character 2] had built the shelter, but had plans to make it even better the next day. 
+Page 9
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT:
+CENTER-LEFT: [Character 3, food-held]
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT:
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 3] had made a tasty dinner with the [food]. 
+Page 10
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 4]
+CENTER-LEFT:
+CENTER-RIGHT:
+RIGHT-CENTER-RIGHT: [Character 1]
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT:
+BOTTOM: [vehicle]
+BOTTOM-RIGHT:
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: [Character 4] had made good progress on fixing the [vehicle] using the parts that [Character 1] found. 
+Page 11
+INT
+LEFT-TOP-LEFT:
+TOP-LEFT:
+TOP:
+TOP-RIGHT:
+RIGHT-TOP-RIGHT:
+LEFT-CENTER-LEFT: [Character 1_sleep]
+CENTER-LEFT: [Character 2_sleep]
+CENTER-RIGHT: [Character 3_sleep]
+RIGHT-CENTER-RIGHT: [Character 4_sleep]
+LEFT-BOTTOM-LEFT: 
+BOTTOM-LEFT: 
+BOTTOM: 
+BOTTOM-RIGHT: 
+RIGHT-BOTTOM-RIGHT: 
+CENTER: 
+Narrator: The friends went to bed after dinner, dreaming about what they would do the next day.
+Page 12
+INT
+role: Finder
+Page 13
+INT
+role: Builder
+Page 14
+INT
+role: Chef
+Page 15
+INT
+role: Fixer

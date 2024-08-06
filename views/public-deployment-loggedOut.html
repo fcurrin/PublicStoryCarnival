@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title><%= __("Story Carnival") %></title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/assets/img/SC_logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/public/theme/css/styles.css" rel="stylesheet" />
+        
+        <link href="/theme/css/styles.css" rel="stylesheet" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>\
+
+        <script src="https://zimjs.org/cdn/1.3.2/createjs.js"></script> </script>
+        <script src="https://zimjs.org/cdn/cat/00/zim.js"></script>
+        <!-- use zimjs.com/distill for minified individual functions! -->
+        <!-- 0. import the pizzazz_02.js file of icons -->
+        <script src="https://d309knd7es5f10.cloudfront.net/pizzazz_02.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <div id="playlist">
+            <audio autoplay></audio>
+        </div>
+
+        <!--TEST: for musicPath in introFormat.js-->
+        <script>
+            const locale = '<%= __("locale") %>';
+            const introStartText = '<%= __("Press to Start Intro") %>';
+        </script>  
+
+        <script src="/scripts/introFormat.js"></script>
+    </head>
+    <body id="page-top" onload="playStory();">
+    <!-- Navigation-->
+    
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container col-12"><a class="navbar-brand js-scroll-trigger" href="#page-top" id="home-title"><%= __("Story Carnival") %></a> 
+            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-next-section text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <%= __("Menu") %>
+                  <i class="fas fa-bars"></i>
+              </button>
+            <div class="collapse navbar-collapse col-lg-8" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded " href="/research" id="research"><%= __("Research") %></a></li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="btn btn-outline-light" href="/login" ondblclick="console.log('Double clicked'); return false;">
+                            <%= __("Log In") %>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown mx-0 mx-lg-1">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownUser1" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fas fa-globe-americas"></i>
+                        </a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item rounded" onclick="setLanguage('en')">English</a></li>
+                        <li><a class="dropdown-item rounded" onclick="setLanguage('es')">Español</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <div class="col-8 col-md-10">
+                <img class="masthead-avatar mb-5 img-fluid" src="/story-carnival-app/assets/img/SC_logo.png" alt="" />
+            </div>
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase text-secondary mb-0" id="home-title-h1"><%= __("Welcome to Story Carnival!") %></h1>
+            <br/>
+            <h1 class="lead text-secondary" style="text-align: left; padding: 10px"><span style="font-weight:bold;"><%= __("This web-based activity is part of a research project conducted by investigators at the University of Iowa.") %></span> <%= __("Please navigate through the introductory slides and read the information for either parents or professionals below before deciding whether to sign up.") %> <span style="font-weight:bold;"><%= __("Creating a parent account means that you have provided research consent.") %></span> </h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Heading-->
+            <h2 class="page-section-heading text-secondary text-uppercase mb-0"><%= __("Introduction") %></h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="canvas-container" id="canvasWrapper">
+            </div>
+            <!--- <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wsDKBpK9mH8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> -->
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h2 class="page-section-heading text-secondary text-uppercase mb-0"><%= __("Information") %></h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary active" onclick="parentInfo()"><%= __("For Parents") %></button>
+                <button type="button" class="btn btn-secondary" onclick="professionalInfo()"><%= __("For Professionals") %></button>
+            </div>
+            <h1 class="lead text-secondary" style="text-align: left; padding: 10px" id="infoText"><p><%= __("We invite you to participate in a research study.  The purpose of the study is to determine how effective parents believe the StoryCarnival website is in helping them support their children in pretend play and how easy or difficult the website is for parents to use.") %></p><p><%= __("We are inviting you to be in this study if you are at least 18 years of age, you are the parent or legal guardian of at least one child age 3-8, and you have access to an internet-enabled device with a speaker.  Approximately 10,000 people will take part in this study at the University of Iowa.") %></p><p><%= __("If you agree to participate, we would like you to use the StoryCarnival website to play stories and guide pretend play as outlined in the tutorial section of this website. On average, we find that StoryCarnival play sessions take approximately 20 minutes from start to finish, although you are free to spend as much time as you would like using the website and playing with the StoryCarnival activities.") %> <%= __("We will maintain logs of user activity to identify the most popular sections of the website. You will be asked to fill out a demographic survey once after sign up. You will be invited to fill out a survey after each play session, once per week of use, and once per month of use. Additionally, you will be invited to fill out a usability survey approximately once per month. You are free to skip any questions that you prefer not to answer or decline to fill out a survey if you so choose by closing the survey window without submitting a response. You may continue participation in this study as long as you would like to through September of 2023. Your time commitment to this study will vary depending on your use of the website, but as a guide: if you participated in one 20-minute session per week for a year, your total time commitment would be approximately 17 hours and 20 minutes over the course of the whole study. You may stop using the website at any point and can contact the research team if you wish to deactivate your account.") %></p><p><%= __("We will keep the information you provide confidential, however federal regulatory agencies and the University of Iowa Institutional Review Board (a committee that reviews and approves research studies) may inspect and copy records pertaining to this research. To participate, you will need to create a StoryCarnival account that requires you to provide an email address and create a password for protected access. The only identifying information you provide on this website (your email address) will be used exclusively to maintain your account; it will not be tied to your survey responses or activity logs. Instead, a unique ID number which the website generates will be tied to your log data and survey responses. We will not retain your email address for future research purposes. If we write a report about this study we will do so in such a way that you cannot be identified.") %></p><p><%= __("There are no known risks from being in this study, and you will not benefit personally.  However we hope that others may benefit in the future from what we learn as a result of this study.") %> </p><p><%= __("You will not have any costs for being in this research study.") %></p><p><%= __("You will not be paid for being in this research study.") %></p><p><%= __("Taking part in this research study is completely voluntary.  If you decide not to be in this study, or if you stop participating at any time, you won’t be penalized or lose any benefits for which you otherwise qualify.") %>  </p><p><%= __("If you have any questions about the research study itself, please contact ") %><span style="font-weight:bold;">Juan Pablo Hourcade, <%= __("phone") %>: (319) 353-2543. </span><%= __("If you experience a research-related injury, please contact: Juan Pablo Hourcade, phone: (319) 353-2543. If you have questions about the rights of research subjects, please contact the Human Subjects Office, 105 Hardin Library for the Health Sciences, 600 Newton Rd, The University of Iowa, Iowa City, IA  52242-1098, (319) 335-6564, or e-mail irb@uiowa.edu. To offer input about your experiences as a research subject or to speak to someone other than the research staff, call the Human Subjects Office at the number above.") %></p><p><%= __("Thank you very much for your consideration. Creating an account on this website indicates your willingness to participate in this study.") %></p></h1>
+        </div>
+    </header>
+    <footer class="footer text-center bg-next-section">
+        <div class="container">
+          <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <h4 class="text-uppercase mb-4" id="footer1"><%= __("Location") %></h4>
+              <p class="lead mb-0">MacLean Hall <br/> The University of Iowa <br/> 2 W Washington St<br/> Iowa City, IA 52240</p>
+            </div>
+            <!-- Footer Contact Text-->
+            <div class="col-lg-4">
+              <h4 class="text-uppercase mb-4" id="footer2"><%= __("Contact") %></h4>
+              <p class="lead mb-0">juanpablo-hourcade@uiowa.edu<br/>            (319) 353-2543</p>
+            </div>
+            <!-- Footer Funding Text-->
+            <div class="col-lg-4">
+              <h4 class="text-uppercase mb-4" id="footer3"><%= __("Funding") %></h4>
+              <p>Copyright © <span id="year"></span> University of Iowa</p>
+              <p class="lead mb-0" id = "nsf-disclaimer"><%= __("NSF") %></p>
+              <img alt="NSF_Official_logo_RGB.png" style="width: 100px; height: 100px" src="https://nsf.widen.net/content/sgngfvefhx/png/NSF_Official_logo_RGB.png?position=c&quality=80&x.portal_shortcode_generated=dnmqqhzz&x.collection_sharename=io4othfh&x.app=portals">
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script>
+        function parentInfo(){
+            //TEST: document.getElementById("infoText").innerHTML = '<p>We invite you to participate in a research study.  The purpose of the study is to determine how effective parents believe the StoryCarnival website is in helping them support their children in pretend play and how easy or difficult the website is for parents to use.</p><p>We are inviting you to be in this study if you are at least 18 years of age, you are the parent or legal guardian of at least one child age 3-8, and you have access to an internet-enabled device with a speaker.  Approximately 10,000 people will take part in this study at the University of Iowa.</p><p>If you agree to participate, we would like you to use the StoryCarnival website to play stories and guide pretend play as outlined in the tutorial section of this website. On average, we find that StoryCarnival play sessions take approximately 20 minutes from start to finish, although you are free to spend as much time as you would like using the website and playing with the StoryCarnival activities. We will maintain logs of user activity to identify the most popular sections of the website. You will be asked to fill out a demographic survey once after sign up. You will be invited to fill out a survey after each play session, once per week of use, and once per month of use. Additionally, you will be invited to fill out a usability survey approximately once per month. You are free to skip any questions that you prefer not to answer or decline to fill out a survey if you so choose by closing the survey window without submitting a response. You may continue participation in this study as long as you would like to through September of 2022. Your time commitment to this study will vary depending on your use of the website, but as a guide: if you participated in one 20-minute session per week for a year, your total time commitment would be approximately 17 hours and 20 minutes over the course of the whole study. You may stop using the website at any point and can contact the research team if you wish to deactivate your account.</p><p>We will keep the information you provide confidential, however federal regulatory agencies and the University of Iowa Institutional Review Board (a committee that reviews and approves research studies) may inspect and copy records pertaining to this research. To participate, you will need to create a StoryCarnival account that requires you to provide an email address and create a password for protected access. The only identifying information you provide on this website (your email address) will be used exclusively to maintain your account; it will not be tied to your survey responses or activity logs. Instead, a unique ID number which the website generates will be tied to your log data and survey responses. We will not retain your email address for future research purposes. If we write a report about this study we will do so in such a way that you cannot be identified.</p><p>There are no known risks from being in this study, and you will not benefit personally.  However we hope that others may benefit in the future from what we learn as a result of this study. </p><p>You will not have any costs for being in this research study.</p><p>You will not be paid for being in this research study.</p><p>Taking part in this research study is completely voluntary.  If you decide not to be in this study, or if you stop participating at any time, you won’t be penalized or lose any benefits for which you otherwise qualify.  </p><p>If you have any questions about the research study itself, please contact <span style="font-weight:bold;">Juan Pablo Hourcade, phone: (319) 353-2543.</span>  If you experience a research-related injury, please contact: Juan Pablo Hourcade, phone: (319) 353-2543. If you have questions about the rights of research subjects, please contact the Human Subjects Office, 105 Hardin Library for the Health Sciences, 600 Newton Rd, The University of Iowa, Iowa City, IA  52242-1098, (319) 335-6564, or e-mail irb@uiowa.edu. To offer input about your experiences as a research subject or to speak to someone other than the research staff, call the Human Subjects Office at the number above.</p><p>Thank you very much for your consideration. Creating an account on this website indicates your willingness to participate in this study.</p>';
+            document.getElementById("infoText").innerHTML = '<p><%= __("We invite you to participate in a research study.  The purpose of the study is to determine how effective parents believe the StoryCarnival website is in helping them support their children in pretend play and how easy or difficult the website is for parents to use.") %></p><p><%= __("We are inviting you to be in this study if you are at least 18 years of age, you are the parent or legal guardian of at least one child age 3-8, and you have access to an internet-enabled device with a speaker.  Approximately 10,000 people will take part in this study at the University of Iowa.") %></p><p><%= __("If you agree to participate, we would like you to use the StoryCarnival website to play stories and guide pretend play as outlined in the tutorial section of this website. On average, we find that StoryCarnival play sessions take approximately 20 minutes from start to finish, although you are free to spend as much time as you would like using the website and playing with the StoryCarnival activities.") %> <%= __("We will maintain logs of user activity to identify the most popular sections of the website. You will be asked to fill out a demographic survey once after sign up. You will be invited to fill out a survey after each play session, once per week of use, and once per month of use. Additionally, you will be invited to fill out a usability survey approximately once per month. You are free to skip any questions that you prefer not to answer or decline to fill out a survey if you so choose by closing the survey window without submitting a response. You may continue participation in this study as long as you would like to through September of 2023. Your time commitment to this study will vary depending on your use of the website, but as a guide: if you participated in one 20-minute session per week for a year, your total time commitment would be approximately 17 hours and 20 minutes over the course of the whole study. You may stop using the website at any point and can contact the research team if you wish to deactivate your account.") %></p><p><%= __("We will keep the information you provide confidential, however federal regulatory agencies and the University of Iowa Institutional Review Board (a committee that reviews and approves research studies) may inspect and copy records pertaining to this research. To participate, you will need to create a StoryCarnival account that requires you to provide an email address and create a password for protected access. The only identifying information you provide on this website (your email address) will be used exclusively to maintain your account; it will not be tied to your survey responses or activity logs. Instead, a unique ID number which the website generates will be tied to your log data and survey responses. We will not retain your email address for future research purposes. If we write a report about this study we will do so in such a way that you cannot be identified.") %></p><p><%= __("There are no known risks from being in this study, and you will not benefit personally.  However we hope that others may benefit in the future from what we learn as a result of this study.") %> </p><p><%= __("You will not have any costs for being in this research study.") %></p><p><%= __("You will not be paid for being in this research study.") %></p><p><%= __("Taking part in this research study is completely voluntary.  If you decide not to be in this study, or if you stop participating at any time, you won’t be penalized or lose any benefits for which you otherwise qualify.") %>  </p><p><%= __("If you have any questions about the research study itself, please contact ") %><span style="font-weight:bold;">Juan Pablo Hourcade, phone: (319) 353-2543.</span><%= __("If you experience a research-related injury, please contact: Juan Pablo Hourcade, phone: (319) 353-2543. If you have questions about the rights of research subjects, please contact the Human Subjects Office, 105 Hardin Library for the Health Sciences, 600 Newton Rd, The University of Iowa, Iowa City, IA  52242-1098, (319) 335-6564, or e-mail irb@uiowa.edu. To offer input about your experiences as a research subject or to speak to someone other than the research staff, call the Human Subjects Office at the number above.") %></p><p><%= __("Thank you very much for your consideration. Creating an account on this website indicates your willingness to participate in this study.") %></p>';
+        }
+
+        function professionalInfo(){
+            //document.getElementById("infoText").innerHTML = '<p>We invite you to test out StoryCarnival on your own and decide whether you might use it in your professional practice.</p><p>If you sign up for an account, you may have an opportunity to request a free MiniBird kit through the mail. We will send these kits to the first 100 professionals who provide a business address that we can verify is associated with a location that provides professional services to children. This step is entirely optional.</p><p>Regardless of that choice, you may sign up for an account and browse the stories and other pages on the website. We will maintain logs of user activity to identify the most popular sections of the website. You will be invited to fill out a survey after each play session, once per week of use, and once per month of use. Additionally, you will be invited to fill out a usability survey approximately once per month. You are free to skip any questions that you prefer not to answer or decline to fill out a survey if you so choose by closing the survey window without submitting a response. If at any point we make data we collect from logs or surveys, we will do so in a way that does not identify specific accounts.</p><p>If you have any questions, please contact <span style="font-weight:bold;">Juan Pablo Hourcade, phone: (319) 353-2543.</span></p>';
+            document.getElementById("infoText").innerHTML = '<p><%= __("We invite you to test out StoryCarnival on your own and decide whether you might use it in your professional practice.") %></p><p><%= __("If you sign up for an account, you may have an opportunity to request a free MiniBird kit through the mail. We will send these kits to the first 100 professionals who provide a business address that we can verify is associated with a location that provides professional services to children. This step is entirely optional.") %></p><p><%= __("Regardless of that choice, you may sign up for an account and browse the stories and other pages on the website. We will maintain logs of user activity to identify the most popular sections of the website. You will be invited to fill out a survey after each play session, once per week of use, and once per month of use. Additionally, you will be invited to fill out a usability survey approximately once per month. You are free to skip any questions that you prefer not to answer or decline to fill out a survey if you so choose by closing the survey window without submitting a response. If at any point we make data we collect from logs or surveys, we will do so in a way that does not identify specific accounts.") %></p><p><%= __("If you have any questions, please contact ") %><span style="font-weight:bold;">Juan Pablo Hourcade, phone: (319) 353-2543.</span></p>';
+        }
+    </script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/public/theme/js/scripts.js"></script>
+
+    <script>
+        function setLanguage(lang){
+            $.post('/changeLanguage', {lang:lang}, function(status) {
+                // reload the page after setting the language
+                console.log("Switching to: " + lang);
+                //window.location.reload();
+                window.location.search = '?lang='+lang;
+        });
+        }
+    </script>
+
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    
+</body>
+</html>

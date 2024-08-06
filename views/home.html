@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title><%= __('Story Carnival') %></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href='<%= __("assets/img/SC_logo.png") %>'/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/styles.css" rel="stylesheet"/>
+    <script src="../scripts/getUserTime.js"></script>
+    <script>
+      var locale = '<%= __("locale") %>';
+    </script>
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <input id="hiddenTime" type="hidden" value="<%= time %>"/>
+    <input id="hiddenName" type="hidden" value="<%= name %>"/>
+    <input id="hiddenMessage" type="hidden" value="<%= message %>"/>
+	  <input id="hiddenRole" type="hidden" value="<%= role %>"/>
+    <input id="hiddenSurveyIDs" type="hidden" value="<%= surveys %>"/>
+
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+
+      <div class="container col-12"><a class="navbar-brand js-scroll-trigger" href="#page-top" id="home-title"><%= __("Story Carnival") %></a> 
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-next-section text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <%= __("Menu") %>
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse col-lg-8" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded " href="/survey" id="home-survey"><%= __("Survey") %></a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/tutorial" id="home-tutorial"><%= __("Tutorial") %></a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio" id="home-stories"><%= __("Stories") %></a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about" id="home-make-stories"><%= __("Templates") %></a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact" id="home-voice-agent"><%= __("Voice Agent") %></a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout" id="home-log-out"><%= __("Log Out") %></a></li>
+            <li class="nav-item dropdown mx-0 mx-lg-1">
+              <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3" id="dropdownUser1" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fas fa-globe-americas"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item rounded" onclick="setLanguage('en')">English</a></li>
+                <li><a class="dropdown-item rounded" onclick="setLanguage('es')">Español</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <img class="masthead-avatar mb-5 img-fluid" src='<%= __("assets/img/SC_logo.png") %>' alt="" />
+      </div>
+      <!-- Portfolio Section-->
+      <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+          <!-- Masthead Heading-->
+          <h1 class="masthead-heading text-uppercase text-secondary mb-0" id="home-title-h1"><%= __("Stories") %></h1>
+          <!-- Icon Divider-->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+          </div>
+          <div class="row">
+            <p class="lead text-secondary" style="text-align:center;" id="home-premade-intro"><%= __("PremadeIntro") %></p>
+          </div>
+          <!-- Portfolio Grid Items-->
+          <div class="row">
+            <!-- Portfolio Item 0-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story0">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Introduction_Images/slide-05.png') %>" alt="Introduction Story"/>
+                <p class="lead text-secondary"><%= __("Introduction") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story1">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Birthday_Party_Images/slide-21.png') %>" alt="Birthday Party Story"/>
+                <p class="lead text-secondary"><%= __("Birthday Party") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 2-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story2">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Castaways_Images/slide-01.png') %>" alt="Castaways Part 1 Story"/>
+                <p class="lead text-secondary"><%= __("The Castaways") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 3-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story3">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Castaways_Day_2_Images/slide-07.png') %>" alt="Castaways Part 2 Story"/>
+                <p class="lead text-secondary"><%= __("Washed Ashore (Castaways Part 2)") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 4-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story4">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Space_Images/slide-03.png') %>" alt="Space Part 1 Story"/>
+                <p class="lead text-secondary"><%= __("Space Explorers") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 5-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story5">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Space_Day_2_Images/slide-02.png') %>" alt="Space Part 2 Story"/>
+                <p class="lead text-secondary"><%= __("Space Explorers Day 2") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 6-->
+            <!-- Using ejs to only display in English-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story6">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                  <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                </div><img class="img-fluid" src="<%= __('premade_stories/Snow_Images/slide-31.png') %>" alt="Snow Day Story"/>
+                <p class="lead text-secondary"><%= __("Snow Day") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 7-->
+            <% if (__("locale") == "en") { %>
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story7">
+                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                  </div><img class="img-fluid" src="<%= __('premade_stories/Blastoff_Images/slide-29.png') %>" alt="Blastoff Story"/>
+                  <p class="lead text-secondary"><%= __("Blastoff") %></p>
+              </div>
+            </div> 
+            <% } %> 
+            <!-- Portfolio Item 8-->
+            <% if (__("locale") == "en") { %>
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story8">
+                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                  </div><img class="img-fluid" src="<%= __('premade_stories/Missing_Bunny_Images/slide-08.png') %>" alt="Missing Bunny Story"/>
+                  <p class="lead text-secondary"><%= __("Missing Bunny") %></p>
+              </div>
+            </div> 
+            <% } %>
+            <!-- Portfolio Item 9-->
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story9">
+                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                  </div><img class="img-fluid" src="<%= __('premade_stories/Summer_Camp_Images/slide-20.png') %>" alt="Summer Camp Story"/>
+                  <p class="lead text-secondary"><%= __("Summer Camp") %></p>
+              </div>
+            </div>
+            <!-- Portfolio Item 10-->
+            <% if (__("locale") == "en") { %>
+            <div class="col-md-6 col-lg-4 col-6 mb-5">
+              <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story10">
+                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                  </div><img class="img-fluid" src="<%= __('premade_stories/Super_Spies_Images/slide-41.png') %>" alt="Super Spies Story"/>
+                  <p class="lead text-secondary"><%= __("Super Spies") %></p>
+              </div>
+            </div>        
+            <% } %>
+            <!-- Portfolio Item 11-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story11">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Holiday_Party_Images/slide-29.png') %>" alt="Holiday Party Story"/>
+                    <p class="lead text-secondary"><%= __("Holiday Party") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 12-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story12">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Treasure_Hunt_Images/slide-01.png') %>" alt="Treasure Hunt Story"/>
+                    <p class="lead text-secondary"><%= __("Treasure Hunt") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 13-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story13">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Big_Event_Images/slide-01.png') %>" alt="Big Event Story"/>
+                    <p class="lead text-secondary"><%= __("Big Event") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 14-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story14">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Mystery_Present_Images/slide-36.png') %>" alt="Mystery Present Story"/>
+                    <p class="lead text-secondary"><%= __("Mystery Present") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 15-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story15">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Wild_West_Images/slide-28.png') %>" alt="Wild West Story"/>
+                    <p class="lead text-secondary"><%= __("Wild West") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 16-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story16">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Prophecy_Images/slide-08.png') %>" alt="Prophecy Story"/>
+                    <p class="lead text-secondary"><%= __("The Prophecy") %></p>
+                </div>
+              </div>        
+            <% } %>
+            <!-- Portfolio Item 17-->
+            <% if (__("locale") == "en") { %>
+              <div class="col-md-6 col-lg-4 col-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#story17">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-play"></i></div>
+                    </div><img class="img-fluid" src="<%= __('premade_stories/Sugar_World_Images/slide-27.png') %>" alt="Sugar World Story"/>
+                    <p class="lead text-secondary"><%= __("Sugar World") %></p>
+                </div>
+              </div>        
+            <% } %>
+          </div>
+        </div>
+      </section>
+    </header>
+    <div class="modal fade" id="surveyModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header2 d-block" style="padding:35px 50px;background-color: #1abc9c; color:white !important;  text-align: center;font-size: 50px">
+              <button class="close float-right" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h5 class="modal-title text-center text-uppercase"><%= __('Survey') %></h5>
+            </div>
+            <div class="modal-body w-100 center" style="padding:40px 50px; text-align: center;font-size: 50px">
+              <div class="row">
+                <div class="col"><span>
+                    <iframe id="surveyFrame" src="" height="800px" width="500px"></iframe></span></div>
+              </div>
+            </div>
+            <div class="modal-footer2" style="padding:10px ;background-color: #1abc9c; color:white !important;  text-align: center;font-size: 50px">
+              <button class="btn btn-primary btn-xl pull-left" type="submit" style="background-color: white;color:#1abc9c" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span><%= __('Close') %></button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- About Section-->
+    <section class="page-section mb-0 bg-next-section" id="about">
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-0" id="home-make-stories-h2"><%= __("MakeYourOwn") %></h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+          <!-- About Section Button-->
+
+        </div>
+
+        <!-- About Section Content-->
+        <div class="row">
+          <p class="lead text-white" style="text-align:center;" id="home-make-stories-intro"><%= __("MakeStoryIntro") %></p>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="/story" id="home-make-stories-btn"><%= __("Templates") %></a>
+        </div>
+        <div class="text-center mt-4">
+          <% if(story_data != null){ %>
+            <% for(var i=0; i< story_data.length; i++) { %>
+              <!-- TEST: hide stories that aren't in the right language -->
+              <% if(story_data[i].locale == __("locale")){ %>
+                <div class="dropdown show">
+                  <a class="btn btn-xl btn-outline-light pt-4 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= story_data[i].storyName %>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/get_story_content?id=<%= i %>"><%= __("Play") %></a>
+                    <a class="dropdown-item" href="/delete_user_stories?id=<%= i %>"><%= __("Delete") %></a>
+                  </div>
+                </div>
+                <br/>
+              <% } %>
+            <% } %>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section-->
+    <section class="page-section bg-primary text-white" id="contact">
+      <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary text-white" id="home-voice-agent-h2"><%= __("Voice Agent") %></h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="row">
+              <p class="lead text-secondary" style="text-align:center;" id="home-voice-agent-intro"><%= __("VoiceAgentIntro") %></p>
+            </div>
+            <div class="text-center mt-4">
+              <a class="btn btn-xl btn-outline-dark" href="/voiceAgent" id="home-voice-agent-btn"><%= __("Voice Agent") %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center bg-next-section">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Location-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4" id="footer1"><%= __("Location") %></h4>
+            <p class="lead mb-0">MacLean Hall <br/> The University of Iowa <br/> 2 W Washington St<br/> Iowa City, IA 52240</p>
+          </div>
+          <!-- Footer Contact Text-->
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4" id="footer2"><%= __("Contact") %></h4>
+            <p class="lead mb-0">juanpablo-hourcade@uiowa.edu<br/>            (319) 353-2543</p>
+            <br>
+            <!-- Bug Report Link-->
+	            <br><input class="btn btn-xl btn-outline-light" id="bugReportButton" type="button" onclick="goToBugReport()" value='<%= __("Report a Bug") %>'/><br> 
+          </div>
+          <!-- Footer Funding Text-->
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4" id="footer3"><%= __("Funding") %></h4>
+            <p>Copyright © <span id="year"></span> University of Iowa</p>
+            <p class="lead mb-0" id = "nsf-disclaimer"><%= __("NSF") %></p>
+            <img alt="NSF_Official_logo_RGB.png" style="width: 100px; height: 100px" src="https://nsf.widen.net/content/sgngfvefhx/png/NSF_Official_logo_RGB.png?position=c&quality=80&x.portal_shortcode_generated=dnmqqhzz&x.collection_sharename=io4othfh&x.app=portals">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 0-->
+    <div class="portfolio-modal modal fade" id="story0" tabindex="-1" role="dialog" aria-labelledby="story0Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story0Label"><%= __("Introduction") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Introduction_Images/slide-05.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story0Description"><%= __("IntroDescript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story0btn" href="<%= __('/playStory?title=Introduction') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story0Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Introduction_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story0Time">🕑: <%= __("IntroTime") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="story1" tabindex="-1" role="dialog" aria-labelledby="story1Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story1Label"><%= __("Birthday Party") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Birthday_Party_Images/slide-21.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story1Description"><%= __("BirthdayDescript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story1btn" href="<%= __('/playStory?title=Birthday Party') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story1Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Birthday_Party_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story1Time">🕑: <%= __("BirthdayTime") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="story2" tabindex="-1" role="dialog" aria-labelledby="story2Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story2Label"><%= __("The Castaways") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Castaways_Images/slide-01.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story2Description"><%= __("CastawaysDescript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story2btn" href="<%= __('/playStory?title=Castaways') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story2Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Castaways_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story2Time">🕑: <%= __("CastawaysTime") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="story3" tabindex="-1" role="dialog" aria-labelledby="story3Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story3Label"><%= __("Washed Ashore (Castaways Part 2)") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Castaways_Day_2_Images/slide-07.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story3Description"><%= __("CastawaysDay2Descript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story3btn" href="<%= __('/playStory?title=Castaways Day 2') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story3Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Castaways_Story_Day_2_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story3Time">🕑: <%= __("Castaways2Time") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="story4" tabindex="-1" role="dialog" aria-labelledby="story4Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story4Label"><%= __("Space Explorers") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Space_Images/slide-03.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story4Description"><%= __("SpaceDescript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story4btn" href="<%= __('/playStory?title=Space') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story4Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Space_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story4Time">🕑: <%= __("SpaceTime") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="story5" tabindex="-1" role="dialog" aria-labelledby="story5Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story5Label"><%= __("Space Explorers Day 2") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Space_Day_2_Images/slide-02.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-5" id="story5Description"><%= __("SpaceDay2Descript") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story5btn" href="<%= __('/playStory?title=Space Day 2') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story5Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Space_Story_Day_2_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story5Time">🕑: <%= __("Space2Time") %></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="story6" tabindex="-1" role="dialog" aria-labelledby="story6Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story6Label"><%= __("Snow Day") %></h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Snow_Images/slide-31.png') %>" alt=""/>
+                  <!-- Portfolio Modal - Text-->
+                  <p class="mb-2" id="story6Description"><%= __("SnowDescript") %></p>
+                  <p class="mb-5" id="story6Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Learning likes and dislikes, coming to a compromise") %></p>
+                  <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-primary" id="story6btn" href="<%= __('/playStory?title=Snow') %>"><%= __("StoryButton") %></a>
+                    <input class="btn btn-xl btn-primary" id="story6Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Snow_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                    <span id="story6Time">🕑: <%= __("SnowTime") %></span>
+                  </div>
+                  <% if (__("locale") == "en") { %>
+                  <div class="text-center mt-4">
+                    <!-- <p class="mt-2 text-left" id="story6.1Focus"><b><%= __("Consider using this with Social Thinking's") %> <a href="https://www.socialthinking.com/online-training/on-demand/webinar-core-concept-thoughts-and-feelings" target="_blank">Thoughts and Feelings</a>:</b></p> -->
+                    <p class="mt-2 text-left" id="story6.1Focus"><b><%= __("Focus on describing likes and interests") %>:</p>
+                    <a class="btn btn-xl btn-primary" id="story6.1btn" href="<%= __('/playStory?title=Snow_short_1') %>"><%= __("Read Part 1") %></a>
+                    <input class="btn btn-xl btn-primary" id="story6.1Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Snow_Story_Short_1.pdf');" value='<%= __("Print Part 1") %>'>
+                    <span class="my-2" id="story6.1ShortTime">🕑: <%= __("Snow1Time") %></span>
+                  </div>
+
+                  <div class="text-center mt-4">
+                    <!-- <p class="mt-2 text-left" id="story6.2Focus"><b><%= __("Consider using this with Social Thinking's") %> <a href="https://www.socialthinking.com/online-training/on-demand/webinar-core-concept-thinking-with-your-eyes-social-attention" target="_blank">Thinking with Your Eyes</a>:</b></p> -->
+                    <p class="mt-2 text-left" id="story6.2Focus"><b><%= __("Focus on noticing what others are doing and what they might be thinking") %>:</p>
+                    <a class="btn btn-xl btn-primary" id="story6.2btn" href="<%= __('/playStory?title=Snow_short_2') %>"><%= __("Read Part 2") %></a>
+                    <input class="btn btn-xl btn-primary" id="story6.2Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Snow_Story_Short_2.pdf');" value='<%= __("Print Part 2") %>'>
+                    <span class="my-2" id="story6.2ShortTime">🕑: <%= __("Snow2Time") %></span>
+                  </div>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Portfolio Modal 7-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story7" tabindex="-1" role="dialog" aria-labelledby="story7Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story7Label"><%= __("Blastoff") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Blastoff_Images/slide-29.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story7Description"><%= __("BlastoffDescript") %></p>
+                    <p class="mb-5" id="story7Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Asking for help, working together") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story7btn" href="<%= __('/playStory?title=Blastoff') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story7Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Blastoff_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story7Time">🕑: <%= __("BlastoffTime") %></span>
+                    </div>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story7shortbtn" href="<%= __('/playStory?title=Blastoff_short') %>"><%= __("Read Short Version") %></a>
+                      <input class="btn btn-xl btn-primary" id="story7ShortPrint" type="button" onclick="window.open('printable_pdfs/' + locale + '/Blastoff_Story_Short.pdf');" value='<%= __("Print Short Version") %>'>
+                      <span class="my-2" id="story7ShortTime">🕑: <%= __("BlastoffShortTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    <!-- Portfolio Modal 8-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story8" tabindex="-1" role="dialog" aria-labelledby="story8Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story8Label"><%= __("Missing Bunny") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Missing_Bunny_Images/slide-08.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story8Description"><%= __("BunnyDescript") %></p>
+                    <p class="mb-5" id="story8Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Problem solving, emotional regulation, and conflict resolution") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story8btn" href="<%= __('/playStory?title=Missing Bunny') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story8Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Missing_Bunny_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story8Time">🕑: <%= __("BunnyTime") %></span>
+                    </div>
+                    <!-- <div class="text-center mt-4"> 
+                      <a class="btn btn-xl btn-primary" id="story8shortbtn" href="<%= __('/playStory?title=Missing Bunny_short') %>"><%= __("Read Short Version") %></a>
+                      <input class="btn btn-xl btn-primary" id="story8ShortPrint" type="button" onclick="window.open('printable_pdfs/' + locale + '/Missing_Bunny_Story_Short.pdf');" value='<%= __("Print Short Version") %>'>
+                      <span class="my-2" id="story8ShortTime">🕑: <%= __("MissingBunnyShortTime") %></span>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    <!-- Portfolio Modal 9-->
+      <div class="portfolio-modal modal fade" id="story9" tabindex="-1" role="dialog" aria-labelledby="story9Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story9Label"><%= __("Summer Camp") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Summer_Camp_Images/slide-20.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story9Description"><%= __("SummerCampDescript") %></p>
+                    <p class="mb-5" id="story9Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Recognizing and talking about emotions") %> </p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story9btn" href="<%= __('/playStory?title=Summer Camp') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story9Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Summer_Camp_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story9Time">🕑: <%= __("SummerCampTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Portfolio Modal 10-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story10" tabindex="-1" role="dialog" aria-labelledby="story9Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story10Label"><%= __("Super Spies") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Super_Spies_Images/slide-41.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story10Description"><%= __("SuperSpiesDescript") %></p>
+                    <p class="mb-5" id="story10Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Paying attention to surroundings") %> </p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story10btn" href="<%= __('/playStory?title=Super Spies') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story10Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Super_Spies_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story10Time">🕑: <%= __("SuperSpiesTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <!-- Portfolio Modal 11-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story11" tabindex="-1" role="dialog" aria-labelledby="story11Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story11Label"><%= __("Holiday Party") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Holiday_Party_Images/slide-29.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story11Description"><%= __("HolidayDescript") %></p>
+                    <p class="mb-5" id="story11Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Planning, compromise, and flexibility") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story11btn" href="<%= __('/playStory?title=Holiday Party') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story11Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Holiday_Party_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story11Time">🕑: <%= __("HolidayTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    <!-- Portfolio Modal 12-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story12" tabindex="-1" role="dialog" aria-labelledby="story12Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story12Label"><%= __("Treasure Hunt") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Treasure_Hunt_Images/slide-01.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story12Description"><%= __("TreasureDescript") %></p>
+                    <p class="mb-5" id="story12Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Thinking through how to get un-stuck when plans change") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story12btn" href="<%= __('/playStory?title=Treasure Hunt') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story12Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Treasure_Hunt_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story12Time">🕑: <%= __("TreasureHuntTime") %></span>
+                    </div>
+                    <div class="text-center mt-4"> 
+                      <a class="btn btn-xl btn-primary" id="story12shortbtn" href="<%= __('/playStory?title=Treasure Hunt_short') %>"><%= __("Read Short Version") %></a>
+                      <input class="btn btn-xl btn-primary" id="story12ShortPrint" type="button" onclick="window.open('printable_pdfs/' + locale + '/Treasure_Hunt_Story_Short.pdf');" value='<%= __("Print Short Version") %>'>
+                      <span class="my-2" id="story12ShortTime">🕑: <%= __("TreasureHuntShortTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <!-- Portfolio Modal 13-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story13" tabindex="-1" role="dialog" aria-labelledby="story13Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story13Label"><%= __("Big Event") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Big_Event_Images/slide-01.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story13Description"><%= __("BigEventDescript") %></p>
+                    <p class="mb-5" id="story13Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Jumping to conclusions and dealing with unexpected events") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story13btn" href="<%= __('/playStory?title=Big Event') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story13Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Big_Event_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story13Time">🕑: <%= __("BigEventTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <!-- Portfolio Modal 14-->
+    <% if (__("locale") == "en") { %>
+      <div class="portfolio-modal modal fade" id="story14" tabindex="-1" role="dialog" aria-labelledby="story14Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <!-- Portfolio Modal - Title-->
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story14Label"><%= __("Mystery Present") %></h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                      <div class="divider-custom-line"></div>
+                      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                      <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Mystery_Present_Images/slide-36.png') %>" alt=""/>
+                    <!-- Portfolio Modal - Text-->
+                    <p class="mb-2" id="story14Description"><%= __("MysteryPresentDescript") %></p>
+                    <p class="mb-5" id="story14Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Making educated guesses, problem-solving") %></p>
+                    <div class="text-center mt-4">
+                      <a class="btn btn-xl btn-primary" id="story14btn" href="<%= __('/playStory?title=Mystery Present') %>"><%= __("StoryButton") %></a>
+                      <input class="btn btn-xl btn-primary" id="story14Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Mystery_Present_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                      <span id="story14Time">🕑: <%= __("MysteryPresentTime") %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <!-- Portfolio Modal 15-->
+      <% if (__("locale") == "en") { %>
+        <div class="portfolio-modal modal fade" id="story15" tabindex="-1" role="dialog" aria-labelledby="story15Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+              <div class="modal-body text-center">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                      <!-- Portfolio Modal - Title-->
+                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story15Label"><%= __("Wild West") %></h2>
+                      <!-- Icon Divider-->
+                      <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                      </div>
+                      <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Wild_West_Images/slide-28.png') %>" alt=""/>
+                      <!-- Portfolio Modal - Text-->
+                      <p class="mb-2" id="story15Description"><%= __("WildWestDescript") %></p>
+                      <p class="mb-5" id="story15Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Paying attention, sticking with a group") %></p>
+                      <div class="text-center mt-4">
+                        <a class="btn btn-xl btn-primary" id="story15btn" href="<%= __('/playStory?title=Wild West') %>"><%= __("StoryButton") %></a>
+                        <input class="btn btn-xl btn-primary" id="story15Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Wild_West_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                        <span id="story15Time">🕑: <%= __("WildWestTime") %></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+        <!-- Portfolio Modal 16-->
+        <% if (__("locale") == "en") { %>
+          <div class="portfolio-modal modal fade" id="story16" tabindex="-1" role="dialog" aria-labelledby="story16Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                <div class="modal-body text-center">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-8">
+                        <!-- Portfolio Modal - Title-->
+                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story16Label"><%= __("The Prophecy") %></h2>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">
+                          <div class="divider-custom-line"></div>
+                          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                          <div class="divider-custom-line"></div>
+                        </div>
+                        <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Prophecy_Images/slide-08.png') %>" alt=""/>
+                        <!-- Portfolio Modal - Text-->
+                        <p class="mb-2" id="story16Description"><%= __("ProphecyDescript") %></p>
+                        <p class="mb-5" id="story16Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Listening, communicating with others") %></p>
+                        <div class="text-center mt-4">
+                          <a class="btn btn-xl btn-primary" id="story16btn" href="<%= __('/playStory?title=Prophecy') %>"><%= __("StoryButton") %></a>
+                          <input class="btn btn-xl btn-primary" id="story16Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Prophecy_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                          <span id="story16Time">🕑: <%= __("ProphecyTime") %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+        <!-- Portfolio Modal 17-->
+        <% if (__("locale") == "en") { %>
+          <div class="portfolio-modal modal fade" id="story17" tabindex="-1" role="dialog" aria-labelledby="story16Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                <div class="modal-body text-center">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-8">
+                        <!-- Portfolio Modal - Title-->
+                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="story17Label"><%= __("Sugar World") %></h2>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">
+                          <div class="divider-custom-line"></div>
+                          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                          <div class="divider-custom-line"></div>
+                        </div>
+                        <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="<%= __('premade_stories/Sugar_World_Images/slide-27.png') %>" alt=""/>
+                        <!-- Portfolio Modal - Text-->
+                        <p class="mb-2" id="story17Description"><%= __("SugarDescript") %></p>
+                        <p class="mb-5" id="story17Concepts"><b><%= __("Key Concepts: ") %></b><%= __("Recognizing the difference between urgent and non-urgent problems, taking turns") %></p>
+                        <div class="text-center mt-4">
+                          <a class="btn btn-xl btn-primary" id="story17btn" href="<%= __('/playStory?title=Sugar World') %>"><%= __("StoryButton") %></a>
+                          <input class="btn btn-xl btn-primary" id="story17Print" type="button" onclick="window.open('printable_pdfs/' + locale + '/Sugar_Story_Standard.pdf');" value='<%= __("Print Story") %>'>
+                          <span id="story17Time">🕑: <%= __("SugarTime") %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+    <!-- Bootstrap core JS-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+
+    <script type="text/javascript">
+      function goToBugReport(){
+        var href = '<%= __("Bug report link") %>';
+        var uid = document.getElementById("hiddenName").value;
+        window.open(href + "?uid=" + uid + "_blank");
+      }
+
+      $(window).on('load',function(){
+        var id = document.getElementById("hiddenTime").value;
+        var uid = document.getElementById("hiddenName").value;
+        var message = document.getElementById("hiddenMessage").value;
+        var role = document.getElementById("hiddenRole").value;
+        console.log(id);
+        console.log(message);
+        console.log(role);
+
+        if(message==1 && id!="none"){
+          let surveyIDs = JSON.parse(document.getElementById("hiddenSurveyIDs").value);
+          console.log(surveyIDs);
+          let surveyID = surveyIDs[role][id];
+          document.getElementById("surveyFrame").src = 'https://uiowa.qualtrics.com/jfe/form/' + surveyID + "?UID=" + uid;
+          $('#surveyModal').modal('show');
+        }
+      });
+    </script>
+
+
+    <script>
+      function setLanguage(lang){
+          $.post('/changeLanguage', {lang:lang}, function(status) {
+              // reload the page after setting the language
+              console.log(status);
+              //window.location.reload();
+              window.location.search = '?lang='+lang;
+          });
+      }
+    </script>
+
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+
+  </body>
+</html>
